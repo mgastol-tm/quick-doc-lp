@@ -40,7 +40,7 @@ function Hero() {
             <a href="/wizyta" className="bg-qd-primary text-white font-heading text-[15px] md:text-base font-semibold px-8 py-3.5 md:py-4 rounded-full flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
               Rozpocznij wizytę <ArrowRight className="w-4 h-4 md:w-[18px] md:h-[18px]" />
             </a>
-            <a href="#" className="bg-white border border-qd-border font-heading text-[15px] md:text-base font-medium px-8 py-3.5 md:py-4 rounded-full text-center text-qd-text hover:bg-gray-50 transition-colors">
+            <a href="#jak-to-dziala" className="bg-white border border-qd-border font-heading text-[15px] md:text-base font-medium px-8 py-3.5 md:py-4 rounded-full text-center text-qd-text hover:bg-gray-50 transition-colors">
               Jak to działa?
             </a>
           </div>
@@ -81,7 +81,7 @@ const steps = [
 
 function HowItWorks() {
   return (
-    <section className="bg-white">
+    <section id="jak-to-dziala" className="bg-white scroll-mt-[72px]">
       <div className={`${container} flex flex-col items-center gap-7 md:gap-14 py-12 md:py-20`}>
         <div className="flex flex-col items-center gap-3">
           <span className="font-heading text-[11px] md:text-[13px] font-semibold text-qd-primary tracking-[2px]">
@@ -176,7 +176,7 @@ const benefits = [
 
 function Benefits() {
   return (
-    <section className="bg-qd-dark">
+    <section id="korzysci" className="bg-qd-dark scroll-mt-[72px]">
       <div className={`${container} flex flex-col items-center gap-8 md:gap-14 py-12 md:py-20`}>
         <div className="flex flex-col items-center gap-3">
           <span className="font-heading text-[11px] md:text-[13px] font-semibold text-qd-primary tracking-[2px]">
@@ -282,7 +282,7 @@ const features = [
 
 function Pricing() {
   return (
-    <section className="bg-white">
+    <section id="cennik" className="bg-white scroll-mt-[72px]">
       <div className={`${container} flex flex-col items-center gap-8 md:gap-14 py-12 md:py-20`}>
         <div className="flex flex-col items-center gap-3">
           <span className="font-heading text-[11px] md:text-[13px] font-semibold text-qd-primary tracking-[2px]">CENNIK</span>
@@ -337,7 +337,7 @@ const faqs = [
 
 function FAQ() {
   return (
-    <section className="bg-qd-section-light">
+    <section id="faq" className="bg-qd-section-light scroll-mt-[72px]">
       <div className={`${container} flex flex-col items-center gap-8 md:gap-12 py-12 md:py-20 max-w-[800px]`}>
         <div className="flex flex-col items-center gap-3">
           <span className="font-heading text-[11px] md:text-[13px] font-semibold text-qd-primary tracking-[2px]">FAQ</span>

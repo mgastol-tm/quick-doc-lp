@@ -4,15 +4,24 @@ import Link from "next/link";
 const container = "max-w-[1240px] mx-auto w-full px-5 md:px-10";
 
 const linkHrefs: Record<string, string> = {
-  "O nas": "/o-nas",
-  "Kontakt": "/kontakt",
-  "Kariera": "/kariera",
+  "O nas": "https://telemedi.com/pl/o-nas/",
+  "Kontakt": "https://telemedi.com/pl/kontakt/",
+  "Kariera": "https://apply.workable.com/telemedi/#jobs",
+  "Jak to działa": "/#jak-to-dziala",
+  "Cennik": "/#cennik",
+  "FAQ": "/#faq",
+  "Konsultacje telemedyczne": "https://telemedi.com/pl/konsultacje-telemedyczne-czat-online-teleporady/",
+  "Zwolnienie (L4) online": "https://telemedi.com/pl/zwolnienie-online-l4-przez-internet/",
+  "Recepta online": "https://telemedi.com/pl/recepta-online/",
+  "Polityka prywatności": "https://telemedi.com/pl/privacy-policy/",
+  "Regulamin": "https://telemedi.com/pl/terms-and-conditions/",
+  "Regulamin organizacyjny": "https://telemedi.com/pl/regulamin-organizacyjny/",
 };
 
 const footerLinks = [
   { title: "Produkt", links: ["Jak to działa", "Cennik", "FAQ"] },
   { title: "Firma", links: ["O nas", "Kontakt", "Kariera"] },
-  { title: "Prawo", links: ["Polityka prywatności", "Regulamin", "RODO"] },
+  { title: "Prawo", links: ["Polityka prywatności", "Regulamin", "Regulamin organizacyjny"] },
 ];
 
 export default function Footer() {
@@ -40,18 +49,14 @@ export default function Footer() {
                 <span className="font-heading text-xs md:text-[13px] font-semibold text-white">{title}</span>
                 {links.map((link) => {
                   const href = linkHrefs[link];
-                  if (href) {
-                    return (
-                      <Link key={link} href={href} className="font-body text-xs md:text-[13px] text-qd-text-secondary hover:text-white transition-colors">
-                        {link}
-                      </Link>
-                    );
+                  const cls = "font-body text-xs md:text-[13px] text-qd-text-secondary hover:text-white transition-colors";
+                  if (!href) {
+                    return <a key={link} href="#" className={cls}>{link}</a>;
                   }
-                  return (
-                    <a key={link} href="#" className="font-body text-xs md:text-[13px] text-qd-text-secondary hover:text-white transition-colors">
-                      {link}
-                    </a>
-                  );
+                  if (href.startsWith("http")) {
+                    return <a key={link} href={href} target="_blank" rel="noopener noreferrer" className={cls}>{link}</a>;
+                  }
+                  return <Link key={link} href={href} className={cls}>{link}</Link>;
                 })}
               </div>
             ))}

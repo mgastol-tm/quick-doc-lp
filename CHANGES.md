@@ -94,3 +94,46 @@ Migrated from CSS custom property arbitrary values (`text-[var(--qd-primary)]`) 
 - **`src/app/o-nas/page.tsx`**, **`kontakt/page.tsx`**, **`kariera/page.tsx`** — theme utility migration
 - **`public/doctor-zolcinska.png`** (new)
 - **`public/doctor-treppner.png`** (new)
+
+## 9. Mobile hamburger menu
+
+Converted Header to a client component with toggle state so the hamburger button works on mobile.
+
+- Opens a dropdown with nav links + "Weź L4" CTA
+- Toggles between Menu and X icons
+- Tapping any link closes the menu
+
+## 10. Scroll-to-section navigation
+
+Added anchor IDs to page sections and wired up all nav links (header, footer, hero button) to scroll to the correct section with `scroll-mt-[72px]` offset for the sticky header.
+
+| Nav item       | Section ID       |
+|----------------|------------------|
+| Jak to działa  | `#jak-to-dziala` |
+| Korzyści       | `#korzysci`      |
+| Cennik         | `#cennik`        |
+| FAQ            | `#faq`           |
+
+## 11. Favicon
+
+Added SVG favicon (`src/app/icon.svg`) — green rounded square with white plus, matching the QuickDoc logo. Auto-detected by Next.js.
+
+## 12. Footer links updated to telemedi.com
+
+Replaced placeholder footer links with real telemedi.com URLs:
+
+- **O nas** → `telemedi.com/pl/o-nas/`
+- **Kontakt** → `telemedi.com/pl/kontakt/`
+- **Kariera** → `apply.workable.com/telemedi/#jobs`
+- **Polityka prywatności** → `telemedi.com/pl/privacy-policy/`
+- **Regulamin** → `telemedi.com/pl/terms-and-conditions/`
+- **RODO** replaced with **Regulamin organizacyjny** → `telemedi.com/pl/regulamin-organizacyjny/`
+- External links open in new tab (`target="_blank"`)
+
+## 13. Widget font override
+
+Added CSS override to force Inter font on the Telemedico widget container (`#telemedico-widget`) for visual consistency with the site.
+
+## 14. Wizyta page spacing
+
+Added top padding to the widget container on `/wizyta` for breathing room below the header.

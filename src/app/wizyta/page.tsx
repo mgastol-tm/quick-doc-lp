@@ -29,7 +29,7 @@ export default function WizytaPage() {
     <main className="flex flex-col min-h-screen">
       <Header />
       <section className="flex-1 bg-white">
-        <div id="telemedico-widget" />
+        <div id="telemedico-widget" className="pt-8 md:pt-12" />
       </section>
       <Footer />
       <Script

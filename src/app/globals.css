@@ -27,4 +27,9 @@
   .font-body {
     font-family: var(--font-inter), "Inter", sans-serif;
   }
+
+  #telemedico-widget,
+  #telemedico-widget * {
+    font-family: var(--font-inter), "Inter", sans-serif !important;
+  }
 }
