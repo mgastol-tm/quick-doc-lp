@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+:root {
+  --qd-primary: #0B8A5E;
+  --qd-primary-light: #E6F4ED;
+  --qd-section-green: #F3FAF5;
+  --qd-section-light: #F8FBF9;
+  --qd-dark: #0D0D0D;
+  --qd-dark-card: #1A1A1A;
+  --qd-dark-border: #2E2E2E;
+  --qd-text: #0D0D0D;
+  --qd-text-secondary: #7A7A7A;
+  --qd-border: #E8E8E8;
+  --qd-white: #FFFFFF;
+  --qd-stars: #F59E0B;
+}
+
+@layer base {
+  html, body {
+    height: 100%;
+  }
+
+  .font-heading {
+    font-family: var(--font-space-grotesk), "Space Grotesk", sans-serif;
+  }
+
+  .font-body {
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+}
