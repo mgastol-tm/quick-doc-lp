@@ -9,16 +9,16 @@ export default function KontaktPage() {
       <Header />
       <section className="bg-white flex-1">
         <div className={`${container} py-12 md:py-20 flex flex-col gap-6`}>
-          <h1 className="font-heading text-3xl md:text-[44px] font-semibold text-[var(--qd-text)] tracking-[-1px]">
+          <h1 className="font-heading text-3xl md:text-[44px] font-semibold text-qd-text tracking-[-1px]">
             Kontakt
           </h1>
-          <p className="font-body text-base md:text-lg text-[var(--qd-text-secondary)] leading-[1.7] max-w-[700px]">
+          <p className="font-body text-base md:text-lg text-qd-text-secondary leading-[1.7] max-w-[700px]">
             Masz pytania? Skontaktuj się z nami — chętnie pomożemy.
           </p>
-          <div className="flex flex-col gap-3 font-body text-base text-[var(--qd-text)]">
+          <div className="flex flex-col gap-3 font-body text-base text-qd-text">
             <p>
               <span className="font-semibold">Email:</span>{" "}
-              <a href="mailto:kontakt@quickdoc.pl" className="text-[var(--qd-primary)] hover:underline">
+              <a href="mailto:kontakt@quickdoc.pl" className="text-qd-primary hover:underline">
                 kontakt@quickdoc.pl
               </a>
             </p>

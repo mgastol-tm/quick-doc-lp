@@ -1,18 +1,18 @@
 @import "tailwindcss";
 
-:root {
-  --qd-primary: #0B8A5E;
-  --qd-primary-light: #E6F4ED;
-  --qd-section-green: #F3FAF5;
-  --qd-section-light: #F8FBF9;
-  --qd-dark: #0D0D0D;
-  --qd-dark-card: #1A1A1A;
-  --qd-dark-border: #2E2E2E;
-  --qd-text: #0D0D0D;
-  --qd-text-secondary: #7A7A7A;
-  --qd-border: #E8E8E8;
-  --qd-white: #FFFFFF;
-  --qd-stars: #F59E0B;
+@theme {
+  --color-qd-primary: #0B8A5E;
+  --color-qd-primary-light: #E6F4ED;
+  --color-qd-section-green: #F3FAF5;
+  --color-qd-section-light: #F8FBF9;
+  --color-qd-dark: #0D0D0D;
+  --color-qd-dark-card: #1A1A1A;
+  --color-qd-dark-border: #2E2E2E;
+  --color-qd-text: #0D0D0D;
+  --color-qd-text-secondary: #7A7A7A;
+  --color-qd-border: #E8E8E8;
+  --color-qd-white: #FFFFFF;
+  --color-qd-stars: #F59E0B;
 }
 
 @layer base {
