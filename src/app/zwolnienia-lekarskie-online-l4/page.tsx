@@ -30,7 +30,7 @@ function Hero() {
           </div>
 
           <h1 className="font-heading text-[32px] md:text-[52px] font-semibold text-qd-text tracking-[-0.5px] md:tracking-[-1px] leading-[1.1] md:leading-[1.05] max-w-[580px]">
-            Konsultacja ze zwolnieniem lekarskim online
+            Konsultacja ze zwolnieniem lekarskim L4 online
           </h1>
 
           <p className="font-body text-[15px] md:text-lg text-qd-text-secondary leading-[1.5] md:leading-[1.6] max-w-[520px]">
