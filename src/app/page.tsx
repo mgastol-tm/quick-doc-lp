@@ -34,7 +34,7 @@ function Hero() {
 
           {/* Doctor image - mobile only */}
           <div className="md:hidden w-full flex justify-center max-h-[280px] -mb-7">
-            <Image src="/doctor-hero.png" alt="Lekarz" width={300} height={320} className="object-contain max-h-[280px] w-auto" />
+            <Image src="/doctor-hero-main.png" alt="Lekarz" width={300} height={320} className="object-contain max-h-[280px] w-auto" />
           </div>
 
           {/* CTAs */}
@@ -67,7 +67,7 @@ function Hero() {
 
         {/* Doctor image - desktop only */}
         <div className="hidden md:flex items-end justify-center shrink-0 self-end">
-          <Image src="/doctor-hero.png" alt="Lekarz" width={420} height={460} className="object-contain max-h-[500px] w-auto" />
+          <Image src="/doctor-hero-main.png" alt="Lekarz" width={420} height={460} className="object-contain max-h-[500px] w-auto" />
         </div>
       </div>
     </section>
