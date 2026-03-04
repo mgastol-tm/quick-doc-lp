@@ -7,6 +7,7 @@ import Link from "next/link";
 const container = "max-w-[1240px] mx-auto w-full px-5 md:px-10";
 
 const navItems = [
+  { label: "Specjalizacje", href: "/#specjalizacje" },
   { label: "Jak to działa", href: "/#jak-to-dziala" },
   { label: "Korzyści", href: "/#korzysci" },
   { label: "Cennik", href: "/#cennik" },
@@ -35,8 +36,8 @@ export default function Header() {
               {item.label}
             </Link>
           ))}
-          <Link href="/wizyta" className="bg-qd-primary text-white font-heading text-sm font-medium px-6 py-2.5 rounded-full hover:opacity-90 transition-opacity">
-            Weź L4
+          <Link href="/#specjalizacje" className="bg-qd-primary text-white font-heading text-sm font-medium px-6 py-2.5 rounded-full hover:opacity-90 transition-opacity">
+            Umów wizytę
           </Link>
         </nav>
 
@@ -61,11 +62,11 @@ export default function Header() {
               </Link>
             ))}
             <Link
-              href="/wizyta"
+              href="/#specjalizacje"
               onClick={() => setOpen(false)}
               className="bg-qd-primary text-white font-heading text-sm font-medium px-6 py-3 rounded-full hover:opacity-90 transition-opacity text-center mt-2"
             >
-              Weź L4
+              Umów wizytę
             </Link>
           </div>
         </nav>

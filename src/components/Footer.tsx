@@ -63,13 +63,18 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-qd-dark-border pt-5 flex flex-col md:flex-row items-center md:justify-between gap-2">
-          <span className="font-body text-[11px] md:text-xs text-qd-text-secondary">
-            © 2026 QuickDoc. Wszelkie prawa zastrzeżone.
-          </span>
-          <span className="font-body text-[11px] md:text-xs text-qd-text-secondary">
-            Stworzone z troską o Twoje zdrowie
-          </span>
+        <div className="border-t border-qd-dark-border pt-5 flex flex-col items-center gap-2">
+          <div className="flex flex-col md:flex-row items-center md:justify-between gap-2 w-full">
+            <span className="font-body text-[11px] md:text-xs text-qd-text-secondary">
+              © 2026 QuickDoc. Wszelkie prawa zastrzeżone.
+            </span>
+            <span className="font-body text-[11px] md:text-xs text-qd-text-secondary">
+              Stworzone z troską o Twoje zdrowie
+            </span>
+          </div>
+          <a href="https://pngtree.com" target="_blank" rel="noopener noreferrer" className="font-body text-[10px] text-qd-text-secondary opacity-40 hover:opacity-60 transition-opacity">
+            png image from pngtree.com
+          </a>
         </div>
       </div>
     </footer>

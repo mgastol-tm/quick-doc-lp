@@ -13,8 +13,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "QuickDoc — Zwolnienie lekarskie online w 15 minut",
-  description: "Szybkie, legalne konsultacje lekarskie online. Uzyskaj e-ZLA bez wychodzenia z domu.",
+  title: "QuickDoc — Lekarz online bez wychodzenia z domu",
+  description: "Konsultacje medyczne online. Internista, pediatra, psychiatra, konsultacja w sprawie zwolnienia L4. Szybko, wygodnie, bez kolejek.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -25,6 +25,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
         />
+        <script src="https://t.contentsquare.net/uxa/3b3217b57ca5d.js" async />
       </head>
       <body className="font-body">{children}</body>
     </html>

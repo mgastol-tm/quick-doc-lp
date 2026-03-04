@@ -1,12 +1,17 @@
 import {
   ShieldCheck, Clock4, FileCheck, ArrowRight, ClipboardList,
   Video, FileText, Zap, Laptop, Shield, Lock,
-  Stethoscope, Baby, Brain,
+  MonitorPlay, UserRound, FileBadge, PhoneCall,
 } from "lucide-react";
 import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import FAQAccordion from "@/components/FAQAccordion";
+import FAQL4Accordion from "@/components/FAQL4Accordion";
+
+export const metadata = {
+  title: "Zwolnienie lekarskie online (L4) — wygodnie i szybko | QuickDoc",
+  description: "Uzyskaj e-zwolnienie lekarskie (e-ZLA) online — wygodnie, szybko i bez kolejek. QuickDoc — lekarz online bez wychodzenia z domu.",
+};
 
 const container = "max-w-[1240px] mx-auto w-full px-5 md:px-10";
 
@@ -25,11 +30,11 @@ function Hero() {
           </div>
 
           <h1 className="font-heading text-[32px] md:text-[52px] font-semibold text-qd-text tracking-[-0.5px] md:tracking-[-1px] leading-[1.1] md:leading-[1.05] max-w-[580px]">
-            Lekarz online bez wychodzenia z domu
+            Zwolnienie lekarskie online — wygodnie i szybko
           </h1>
 
           <p className="font-body text-[15px] md:text-lg text-qd-text-secondary leading-[1.5] md:leading-[1.6] max-w-[520px]">
-            Skonsultuj się z lekarzem specjalistą online. Internista, pediatra, psychiatra lub konsultacja w sprawie zwolnienia L4 — wszystko z domu, bez kolejek.
+            Omiń kolejki w przychodni. Skonsultuj się z lekarzem specjalistą online, uzyskaj diagnozę i odbierz e-ZLA — wszystko z domu.
           </p>
 
           {/* Doctor image - mobile only */}
@@ -39,11 +44,11 @@ function Hero() {
 
           {/* CTAs */}
           <div className="flex flex-col md:flex-row gap-3 md:gap-4">
-            <a href="#specjalizacje" className="bg-qd-primary text-white font-heading text-[15px] md:text-base font-semibold px-8 py-3.5 md:py-4 rounded-full flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+            <a href="/wizyta" className="bg-qd-primary text-white font-heading text-[15px] md:text-base font-semibold px-8 py-3.5 md:py-4 rounded-full flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
               Rozpocznij wizytę <ArrowRight className="w-4 h-4 md:w-[18px] md:h-[18px]" />
             </a>
-            <a href="#specjalizacje" className="bg-white border border-qd-border font-heading text-[15px] md:text-base font-medium px-8 py-3.5 md:py-4 rounded-full text-center text-qd-text hover:bg-gray-50 transition-colors">
-              Sprawdź specjalizacje
+            <a href="#jak-to-dziala" className="bg-white border border-qd-border font-heading text-[15px] md:text-base font-medium px-8 py-3.5 md:py-4 rounded-full text-center text-qd-text hover:bg-gray-50 transition-colors">
+              Jak to działa?
             </a>
           </div>
 
@@ -52,7 +57,7 @@ function Hero() {
             {[
               { icon: ShieldCheck, text: "Lekarze", textDesktop: "Lekarze specjaliści" },
               { icon: Clock4, text: "Szybko", textDesktop: "Szybko i wygodnie" },
-              { icon: FileCheck, text: "4 specjalizacje", textDesktop: "4 specjalizacje medyczne" },
+              { icon: FileCheck, text: "e-ZLA", textDesktop: "Ważne e-ZLA (L4)" },
             ].map(({ icon: Icon, text, textDesktop }) => (
               <div key={text} className="flex items-center gap-1 md:gap-1.5">
                 <Icon className="w-3.5 h-3.5 md:w-4 md:h-4 text-qd-primary" />
@@ -74,76 +79,11 @@ function Hero() {
   );
 }
 
-/* ───────── Specializations ───────── */
-const specializations = [
-  { icon: Stethoscope, title: "Internista", desc: "Przeziębienie, grypa, bóle głowy, infekcje i inne dolegliwości ogólne.", price: "89 zł", href: "/wizyta", highlighted: false, comingSoon: true },
-  { icon: Baby, title: "Pediatra", desc: "Konsultacje dla dzieci i młodzieży. Gorączka, wysypka, kaszel.", price: "95 zł", href: "/wizyta", highlighted: false, comingSoon: true },
-  { icon: FileCheck, title: "Konsultacja w sprawie zwolnienia L4", desc: "Wygodne e-zwolnienie lekarskie online. Widoczne od razu na koncie IKP.", price: "79 zł", href: "/zwolnienia-lekarskie-online-l4", highlighted: true, comingSoon: false },
-  { icon: Brain, title: "Psychiatra", desc: "Lęk, depresja, bezsenność. Recepta na leki psychiatryczne online.", price: "269 zł", href: "/wizyta", highlighted: false, comingSoon: true },
-];
-
-function Specializations() {
-  return (
-    <section id="specjalizacje" className="bg-white scroll-mt-[72px]">
-      <div className={`${container} flex flex-col items-center gap-7 md:gap-14 py-12 md:py-20`}>
-        <div className="flex flex-col items-center gap-3">
-          <span className="font-heading text-[11px] md:text-[13px] font-semibold text-qd-primary tracking-[2px]">
-            SPECJALIZACJE
-          </span>
-          <h2 className="font-heading text-2xl md:text-[40px] font-semibold text-qd-text tracking-[-0.5px] md:tracking-[-1px] text-center">
-            Wybierz konsultację dla siebie
-          </h2>
-        </div>
-
-        <div className="w-full grid grid-cols-1 md:grid-cols-4 gap-4">
-          {specializations.map(({ icon: Icon, title, desc, price, href, highlighted, comingSoon }) => {
-            const Tag = comingSoon ? "div" : "a";
-            return (
-              <Tag
-                key={title}
-                {...(!comingSoon ? { href } : {})}
-                className={`rounded-2xl p-5 md:p-7 flex flex-col gap-3 md:gap-4 transition-colors ${
-                  highlighted
-                    ? "bg-qd-primary"
-                    : comingSoon
-                      ? "bg-qd-section-light border border-qd-border opacity-75"
-                      : "bg-qd-section-light border border-qd-border hover:bg-gray-50"
-                }`}
-              >
-                {highlighted && (
-                  <span className="bg-white/20 text-white text-[11px] font-medium px-3 py-1 rounded-full w-fit">
-                    Najpopularniejsze
-                  </span>
-                )}
-                {comingSoon && (
-                  <span className="bg-qd-text-secondary/10 text-qd-text-secondary text-[11px] font-medium px-3 py-1 rounded-full w-fit">
-                    Wkrótce
-                  </span>
-                )}
-                <Icon className={`w-8 h-8 ${highlighted ? "text-white" : "text-qd-primary"}`} />
-                <h3 className={`font-heading text-base md:text-lg font-semibold ${highlighted ? "text-white" : "text-qd-text"}`}>
-                  {title}
-                </h3>
-                <p className={`font-body text-[13px] md:text-sm ${highlighted ? "text-white/80" : "text-qd-text-secondary"}`}>
-                  {desc}
-                </p>
-                <span className={`font-heading text-xl md:text-2xl font-semibold mt-auto ${highlighted ? "text-white" : "text-qd-text"}`}>
-                  {price}
-                </span>
-              </Tag>
-            );
-          })}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 /* ───────── How It Works ───────── */
 const steps = [
   { num: "1", icon: Video, title: "Telekonsultacja", desc: "Umów się na wizytę online. Lekarz skontaktuje się z Tobą telefonicznie, przez wideo lub czat — wygodnie, z domu." },
   { num: "2", icon: ClipboardList, title: "Opisz objawy", desc: "Opowiedz lekarzowi o swoich dolegliwościach. Lekarz przeprowadzi wywiad i postawi diagnozę." },
-  { num: "3", icon: FileText, title: "Otrzymaj zalecenia", desc: "Lekarz przekaże zalecenia medyczne, e-receptę lub e-zwolnienie. Dokumenty wysyłane elektronicznie, od razu po konsultacji." },
+  { num: "3", icon: FileText, title: "Otrzymaj zalecenia i e-ZLA", desc: "Lekarz przekaże zalecenia medyczne. Jeśli zachodzi potrzeba — wystawi e-zwolnienie (e-ZLA), widoczne od razu na koncie IKP." },
 ];
 
 function HowItWorks() {
@@ -181,53 +121,28 @@ function HowItWorks() {
   );
 }
 
-/* ───────── Doctors ───────── */
-const doctors = [
-  { name: "Dr Dominika Żółcińska-Konieczna", spec: "Lekarz ogólny · ★ 5.0 (8 144)", status: "Online teraz", online: true, img: "/doctor-zolcinska.png", initials: "DŻ" },
-  { name: "Dr Kamil Rozmus", spec: "Lekarz ogólny · ★ 5.0 (4 879)", status: "Online teraz", online: true, img: "/doctor-rozmus.png", initials: "KR" },
-  { name: "Dr Olga Frieman", spec: "Lekarz ogólny · ★ 5.0 (4 017)", status: "Online teraz", online: true, img: "/doctor-frieman.png", initials: "OF" },
-  { name: "Dr Marek Treppner", spec: "Lekarz ogólny · ★ 4.7 (5 547)", status: "Online teraz", online: true, img: "/doctor-treppner.png", initials: "MT" },
+/* ───────── Platform Stats ───────── */
+const platformStats = [
+  { icon: MonitorPlay, text: "Przez naszą platformę realizowanych jest ponad 40 tys. konsultacji miesięcznie" },
+  { icon: UserRound, text: "Z naszej platformy korzysta ponad 500 lekarzy" },
+  { icon: FileBadge, text: "Możesz otrzymać zwolnienie lekarskie w przypadku wskazań medycznych" },
+  { icon: PhoneCall, text: "Możesz dopytać lekarza o szczegóły nawet po konsultacji" },
 ];
 
-function Doctors() {
+function PlatformStats() {
   return (
     <section className="bg-qd-section-green">
-      <div className={`${container} flex flex-col items-center gap-6 md:gap-14 py-12 md:py-20`}>
-        <div className="flex flex-col items-center gap-3">
-          <span className="font-heading text-[11px] md:text-[13px] font-semibold text-qd-primary tracking-[2px]">
-            NASI LEKARZE
-          </span>
-          <h2 className="font-heading text-2xl md:text-[40px] font-semibold text-qd-text tracking-[-0.5px] md:tracking-[-1px] text-center">
-            Zaufani specjaliści
-          </h2>
-          <p className="hidden md:block font-body text-base text-qd-text-secondary text-center">
-            Każda konsultacja odbywa się z lekarzem posiadającym pełne uprawnienia i wpis do rejestru Izby Lekarskiej.
-          </p>
-        </div>
-
-        <div className="w-full flex flex-col md:grid md:grid-cols-2 gap-2.5 md:gap-4">
-          {doctors.map((doc) => (
-            <div key={doc.name} className="flex items-center gap-3 md:gap-4 bg-white border border-qd-border rounded-xl md:rounded-2xl p-4 md:p-5">
-              <div className="relative w-11 h-11 md:w-14 md:h-14 rounded-full overflow-hidden shrink-0 bg-gray-200">
-                <Image src={doc.img} alt={doc.name} fill className="object-cover" />
+      <div className={`${container} flex flex-col items-center gap-8 md:gap-14 py-12 md:py-20`}>
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+          {platformStats.map(({ icon: Icon, text }) => (
+            <div key={text} className="flex items-start gap-4 md:gap-5 bg-white border border-qd-border rounded-xl md:rounded-2xl p-5 md:p-7">
+              <div className="w-10 h-10 md:w-12 md:h-12 bg-qd-primary-light rounded-xl flex items-center justify-center shrink-0">
+                <Icon className="w-5 h-5 md:w-6 md:h-6 text-qd-primary" />
               </div>
-              <div className="flex flex-col gap-0.5">
-                <span className="font-heading text-sm md:text-base font-semibold text-qd-text">{doc.name}</span>
-                <span className="font-body text-[11px] md:text-[13px] text-qd-text-secondary">{doc.spec}</span>
-                <span className={`font-body text-[11px] md:text-[13px] font-medium ${doc.online ? "text-qd-primary" : "text-qd-text-secondary"}`}>
-                  {doc.online && <span className="inline-block w-1.5 h-1.5 rounded-full bg-qd-primary mr-1 align-middle" />}
-                  {doc.status}
-                </span>
-              </div>
+              <p className="font-body text-[13px] md:text-sm text-qd-text leading-[1.6] pt-2 md:pt-3">{text}</p>
             </div>
           ))}
         </div>
-
-        <span className="font-heading text-sm md:text-lg font-semibold text-qd-text-secondary">+120 specjalistów</span>
-
-        <a href="#specjalizacje" className="bg-qd-primary text-white font-heading text-[15px] md:text-base font-semibold px-7 md:px-9 py-3.5 md:py-4 rounded-full flex items-center gap-2 hover:opacity-90 transition-opacity">
-          Rozpocznij wizytę <ArrowRight className="w-4 h-4 md:w-[18px] md:h-[18px]" />
-        </a>
       </div>
     </section>
   );
@@ -340,11 +255,11 @@ function TestimonialCard({ quote, name, initials, desktop }: { quote: string; na
 }
 
 /* ───────── Pricing ───────── */
-const pricingServices = [
-  { name: "Internista", price: "89 zł", href: "/wizyta", comingSoon: true },
-  { name: "Pediatra", price: "95 zł", href: "/wizyta", comingSoon: true },
-  { name: "Konsultacja w sprawie zwolnienia L4", price: "79 zł", href: "/zwolnienia-lekarskie-online-l4", comingSoon: false },
-  { name: "Psychiatra", price: "269 zł", href: "/wizyta", comingSoon: true },
+const features = [
+  "Wideokonsultacja z lekarzem specjalistą",
+  "Oficjalne elektroniczne zwolnienie lekarskie",
+  "Wysyłka do ZUS i pracodawcy automatycznie",
+  "Dostępne 24/7, 365 dni w roku",
 ];
 
 function Pricing() {
@@ -357,40 +272,41 @@ function Pricing() {
             Prosty, przejrzysty cennik
           </h2>
           <p className="font-body text-sm md:text-base text-qd-text-secondary text-center">
-            Jedna opłata za konsultację. Bez ukrytych kosztów, bez subskrypcji.
+            Jedna stała opłata. Bez ukrytych kosztów, bez subskrypcji.
           </p>
         </div>
 
-        <div className="w-full max-w-[600px] border border-qd-border rounded-2xl overflow-hidden p-6 md:p-8">
-          <div className="flex flex-col">
-            {pricingServices.map(({ name, price, href, comingSoon }, i) => {
-              const Tag = comingSoon ? "div" : "a";
-              return (
-                <Tag
-                  key={name}
-                  {...(!comingSoon ? { href } : {})}
-                  className={`flex items-center justify-between py-4 md:py-5 gap-4 rounded-lg ${
-                    i < pricingServices.length - 1 ? "border-b border-qd-border" : ""
-                  } ${comingSoon ? "opacity-50" : "hover:bg-qd-section-light transition-colors"}`}
-                >
-                  <span className="font-heading text-sm md:text-base font-medium text-qd-text flex items-center gap-2">
-                    {name}
-                    {comingSoon && (
-                      <span className="text-[10px] font-medium text-qd-text-secondary bg-qd-section-light px-2 py-0.5 rounded-full">wkrótce</span>
-                    )}
-                  </span>
-                  <span className="font-heading text-base md:text-lg font-semibold text-qd-primary shrink-0">{price}</span>
-                </Tag>
-              );
-            })}
+        <div className="w-full max-w-[520px] border border-qd-border rounded-2xl bg-white overflow-hidden">
+          <div className="p-6 md:p-8 pb-5 md:pb-6 border-b border-qd-border flex flex-col gap-2">
+            <h3 className="font-heading text-base md:text-lg font-semibold text-qd-text">Konsultacja online</h3>
+            <p className="font-body text-[13px] md:text-sm text-qd-text-secondary leading-[1.5]">
+              Konsultacja lekarska z fokusem na zwolnienie lekarskie (e-ZLA).
+            </p>
+            <div className="flex items-end gap-1 mt-1">
+              <span className="font-heading text-[32px] md:text-[40px] font-semibold text-qd-text tracking-[-1px]">79 zł</span>
+              <span className="font-body text-[13px] md:text-sm text-qd-text-secondary pb-1">/ konsultacja</span>
+            </div>
           </div>
 
-          <div className="mt-6">
-            <a href="#specjalizacje" className="block w-full bg-qd-primary text-white font-heading text-[15px] md:text-base font-semibold py-3.5 md:py-4 rounded-full text-center hover:opacity-90 transition-opacity">
+          <div className="p-6 md:px-8 md:py-6 flex flex-col gap-2.5 md:gap-3">
+            {features.map((f) => (
+              <div key={f} className="flex items-center gap-2 md:gap-2.5">
+                <ShieldCheck className="w-4 h-4 text-qd-primary shrink-0" />
+                <span className="font-body text-[13px] md:text-sm text-qd-text">{f}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="px-6 pb-6 md:px-8 md:pb-8">
+            <a href="/wizyta" className="block w-full bg-qd-primary text-white font-heading text-[15px] md:text-base font-semibold py-3.5 md:py-4 rounded-full text-center hover:opacity-90 transition-opacity">
               Rozpocznij wizytę
             </a>
           </div>
         </div>
+
+        <p className="font-body text-[11px] md:text-xs text-qd-text-secondary text-center max-w-[520px]">
+          Decyzja o wystawieniu zwolnienia lekarskiego zawsze należy do lekarza. Opłata obejmuje konsultację, niezależnie od jej wyniku.
+        </p>
       </div>
     </section>
   );
@@ -408,7 +324,7 @@ function FAQ() {
           </h2>
         </div>
 
-        <FAQAccordion />
+        <FAQL4Accordion />
       </div>
     </section>
   );
@@ -423,9 +339,9 @@ function FinalCTA() {
           Źle się czujesz? Nie czekaj.
         </h2>
         <p className="font-body text-[15px] md:text-lg text-white/80 text-center">
-          Skonsultuj się z lekarzem online — szybko i bez wychodzenia z domu. Internista, pediatra, psychiatra lub konsultacja w sprawie zwolnienia L4.
+          Uzyskaj zwolnienie lekarskie online — wygodnie, szybko i bez kolejek.
         </p>
-        <a href="#specjalizacje" className="bg-white font-heading text-[15px] md:text-base font-semibold text-qd-primary px-7 md:px-8 py-3.5 md:py-4 rounded-full flex items-center gap-2 hover:opacity-90 transition-opacity">
+        <a href="/wizyta" className="bg-white font-heading text-[15px] md:text-base font-semibold text-qd-primary px-7 md:px-8 py-3.5 md:py-4 rounded-full flex items-center gap-2 hover:opacity-90 transition-opacity">
           Rozpocznij wizytę <ArrowRight className="w-4 h-4 md:w-[18px] md:h-[18px] text-qd-primary" />
         </a>
         <p className="font-body text-xs md:text-[13px] text-white/60 text-center">
@@ -437,12 +353,11 @@ function FinalCTA() {
 }
 
 /* ───────── Page ───────── */
-export default function Home() {
+export default function ZwolnieniaLekarskieL4() {
   return (
     <main className="flex flex-col min-h-screen">
       <Header />
       <Hero />
-      <Specializations />
       <HowItWorks />
       <Benefits />
       <SocialProof />

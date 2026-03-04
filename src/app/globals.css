@@ -15,6 +15,16 @@
   --color-qd-stars: #F59E0B;
 }
 
+@keyframes accordion-down {
+  from { height: 0; }
+  to { height: var(--radix-accordion-content-height); }
+}
+
+@keyframes accordion-up {
+  from { height: var(--radix-accordion-content-height); }
+  to { height: 0; }
+}
+
 @layer base {
   html, body {
     height: 100%;
