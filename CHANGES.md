@@ -136,4 +136,25 @@ Added CSS override to force Inter font on the Telemedico widget container (`#tel
 
 ## 14. Wizyta page spacing
 
-Added top padding to the widget container on `/wizyta` for breathing room below the header.
+Added top and bottom padding to the widget container on `/wizyta` for breathing room.
+
+## 15. Widget embed rewrite
+
+Rewrote `/wizyta` widget loading to match the exact embed pattern from `telemedi.com/pl/zwolnienie-online-l4-przez-internet/`:
+
+- Full production config: `apiHost`, `clinicId`, `fusionAuthEnabled`, `fusionAuthHost`, `dashboardHost`
+- `detailedSource: "quickdoc"` for tracking
+- `sickLeaveSpecializationId: "9e7ce922-..."` from the official sick leave page
+- Widget container constrained to same `max-w-[1240px]` column as main page content
+- Dynamic `<script>` injection (original IIFE pattern) instead of `next/script`
+
+## 16. Disable TelemediGo and NFZ/POZ in widget
+
+Disabled upsell banners and NFZ free visit elements:
+
+- `telemediSubscriptionEnabled: false`
+- `enabledTelemediGoInSickLeave: false`
+- `enabledTelemediGoInEprescription: false`
+- `otherMessagesForB2bClinicEnabled: true` — hides NFZ/POZ button in sick leave flow
+- `showPaidVisitsOnly: true`
+- Shadow root CSS injection via `MutationObserver` to hide any remaining POZ elements

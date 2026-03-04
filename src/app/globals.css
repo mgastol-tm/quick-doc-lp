@@ -32,4 +32,14 @@
   #telemedico-widget * {
     font-family: var(--font-inter), "Inter", sans-serif !important;
   }
+
+  /* Hide NFZ/POZ elements in widget */
+  #telemedico-widget .fk-footer__poz,
+  #telemedico-widget .fk-footer__not-logged-user-poz,
+  #telemedico-widget .poz-info,
+  #telemedico-widget .poz-data,
+  #telemedico-widget .info-content-poz,
+  #telemedico-widget .fk-declaration-info__poz-signup-mobile {
+    display: none !important;
+  }
 }
