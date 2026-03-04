@@ -30,7 +30,7 @@ function Hero() {
           </div>
 
           <h1 className="font-heading text-[32px] md:text-[52px] font-semibold text-qd-text tracking-[-0.5px] md:tracking-[-1px] leading-[1.1] md:leading-[1.05] max-w-[580px]">
-            Zwolnienie lekarskie online — wygodnie i szybko
+            Konsultacja ze zwolnieniem lekarskim online
           </h1>
 
           <p className="font-body text-[15px] md:text-lg text-qd-text-secondary leading-[1.5] md:leading-[1.6] max-w-[520px]">
@@ -45,7 +45,7 @@ function Hero() {
           {/* CTAs */}
           <div className="flex flex-col md:flex-row gap-3 md:gap-4">
             <a href="/wizyta" className="bg-qd-primary text-white font-heading text-[15px] md:text-base font-semibold px-8 py-3.5 md:py-4 rounded-full flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
-              Rozpocznij wizytę <ArrowRight className="w-4 h-4 md:w-[18px] md:h-[18px]" />
+              Rozpocznij wizytę <span className="opacity-60">79 zł</span> <ArrowRight className="w-4 h-4 md:w-[18px] md:h-[18px]" />
             </a>
             <a href="#jak-to-dziala" className="bg-white border border-qd-border font-heading text-[15px] md:text-base font-medium px-8 py-3.5 md:py-4 rounded-full text-center text-qd-text hover:bg-gray-50 transition-colors">
               Jak to działa?
@@ -299,7 +299,7 @@ function Pricing() {
 
           <div className="px-6 pb-6 md:px-8 md:pb-8">
             <a href="/wizyta" className="block w-full bg-qd-primary text-white font-heading text-[15px] md:text-base font-semibold py-3.5 md:py-4 rounded-full text-center hover:opacity-90 transition-opacity">
-              Rozpocznij wizytę
+              Rozpocznij wizytę <span className="opacity-60">79 zł</span>
             </a>
           </div>
         </div>
@@ -342,7 +342,7 @@ function FinalCTA() {
           Uzyskaj zwolnienie lekarskie online — wygodnie, szybko i bez kolejek.
         </p>
         <a href="/wizyta" className="bg-white font-heading text-[15px] md:text-base font-semibold text-qd-primary px-7 md:px-8 py-3.5 md:py-4 rounded-full flex items-center gap-2 hover:opacity-90 transition-opacity">
-          Rozpocznij wizytę <ArrowRight className="w-4 h-4 md:w-[18px] md:h-[18px] text-qd-primary" />
+          Rozpocznij wizytę <span className="opacity-60">79 zł</span> <ArrowRight className="w-4 h-4 md:w-[18px] md:h-[18px] text-qd-primary" />
         </a>
         <p className="font-body text-xs md:text-[13px] text-white/60 text-center">
           Bez subskrypcji — płacisz tylko wtedy, gdy potrzebujesz
