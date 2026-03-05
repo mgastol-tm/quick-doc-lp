@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
-import CookieConsent from "@/components/CookieConsent";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -26,21 +25,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
         />
+        <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="d527c754-16a8-4a01-8d77-b8009211edef" data-culture="PL" data-blockingmode="auto" async />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-1JPTVN6VCT" />
         <script
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
-              gtag("consent", "default", {
-                ad_personalization: "denied",
-                ad_storage: "denied",
-                ad_user_data: "denied",
-                analytics_storage: "denied",
-                functionality_storage: "denied",
-                personalization_storage: "denied",
-                security_storage: "granted",
-                wait_for_update: 500
-              });
+              gtag('js', new Date());
+              gtag('config', 'G-1JPTVN6VCT');
             `,
           }}
         />
@@ -48,7 +41,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="font-body">
         {children}
-        <CookieConsent />
       </body>
     </html>
   );
