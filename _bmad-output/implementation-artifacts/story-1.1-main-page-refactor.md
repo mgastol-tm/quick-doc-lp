@@ -243,7 +243,8 @@ review
 - `src/components/FAQL4Accordion.tsx` — NEW: Working FAQ accordion for L4 subpage with L4-specific Q&A
 - `src/app/globals.css` — MODIFIED: Added accordion animation keyframes
 - `src/app/layout.tsx` — MODIFIED: Updated metadata, added Contentsquare script
-- `public/doctor-hero-main.png` — NEW: Alternative doctor hero image (unused, kept as asset)
+- `src/components/CookieConsent.tsx` — NEW: Cookie consent banner with Google Consent Mode v2 integration
+- `public/doctor-hero-main.png` — NEW: Main page hero doctor image (transparent bg)
 
 ---
 
@@ -254,6 +255,7 @@ review
 - **2026-03-04:** Copy accuracy pass: Added working FAQ accordions (Radix UI) on both pages with answer copy. Replaced "licencjonowanym lekarzem" → "lekarzem specjalistą", "Licencjonowani lekarze" → "Lekarze specjaliści". Removed all "w 15 minut" claims. Changed "100% online" → "Bez wychodzenia z domu" (consultation is phone/video/chat). Reframed L4 as consultation not product ("zwolnienie L4" → "konsultacja w sprawie zwolnienia L4"). Rewrote HowItWorks steps: 1) Telekonsultacja, 2) Opisz objawy, 3) Otrzymaj zalecenia i e-ZLA jeśli potrzeba. Updated layout title to "bez wychodzenia z domu".
 - **2026-03-04:** Telemedi compliance pass: Updated consultation method to phone/video/chat (per telemedi.com). Added medical disclaimer under L4 pricing ("Decyzja o wystawieniu zwolnienia zawsze należy do lekarza"). Added legal reference (ustawa z 25.06.1999) to FAQ answers. Removed Doctors section from both pages. Removed PlatformStats section from L4 subpage.
 - **2026-03-04:** UX & analytics: All main page CTAs now scroll to #specjalizacje instead of /wizyta. Header CTA uses /#specjalizacje for cross-page navigation. Added Contentsquare script (cookie consent + session recording) to layout.tsx.
+- **2026-03-05:** Updated main page hero with new doctor image (transparent bg). L4 subpage: heading changed to "Konsultacja ze zwolnieniem lekarskim L4 online", CTA buttons show dimmed price "79 zł". Added cookie consent banner with Google Consent Mode v2 (same approach as telemedi.com/pl) — defaults all tracking to denied, updates to granted on accept.
 
 ---
 
