@@ -256,7 +256,8 @@ review
 - **2026-03-04:** Telemedi compliance pass: Updated consultation method to phone/video/chat (per telemedi.com). Added medical disclaimer under L4 pricing ("Decyzja o wystawieniu zwolnienia zawsze należy do lekarza"). Added legal reference (ustawa z 25.06.1999) to FAQ answers. Removed Doctors section from both pages. Removed PlatformStats section from L4 subpage.
 - **2026-03-04:** UX & analytics: All main page CTAs now scroll to #specjalizacje instead of /wizyta. Header CTA uses /#specjalizacje for cross-page navigation. Added Contentsquare script (cookie consent + session recording) to layout.tsx.
 - **2026-03-05:** Updated main page hero with new doctor image (transparent bg). L4 subpage: heading changed to "Konsultacja ze zwolnieniem lekarskim L4 online", CTA buttons show dimmed price "79 zł".
-- **2026-03-05:** Replaced custom cookie consent with Cookiebot by Usercentrics (same CBID as telemedi.com, PL culture, auto blocking mode). Added Google Analytics 4 (G-1JPTVN6VCT) to all pages via layout.tsx. Removed custom CookieConsent component.
+- **2026-03-05:** Replaced custom cookie consent with Cookiebot by Usercentrics (QuickDoc CBID, auto blocking mode). Added Google Analytics 4 (G-1JPTVN6VCT) to all pages via layout.tsx. Removed custom CookieConsent component.
+- **2026-03-05:** Fixed Telemedi widget shadow DOM style injection on /wizyta page. Moved attachShadow override before widget script load to force open mode. Added setInterval polling (500ms) to persist injected styles across widget re-renders. Hides POZ/NFZ elements and "Umów za 0 PLN*" button (.fk-button--secondary, .poz-info).
 
 ---
 

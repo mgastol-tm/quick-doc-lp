@@ -49,9 +49,17 @@ export default function WizytaPage() {
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const win = window as any;
+
+    // Override attachShadow BEFORE widget loads to force open mode
+    const origAttachShadow = Element.prototype.attachShadow;
+    Element.prototype.attachShadow = function (init: ShadowRootInit) {
+      return origAttachShadow.call(this, { ...init, mode: "open" });
+    };
+
     win.Telemedico = win.Telemedico || function (...args: unknown[]) {
       (win.Telemedico.q = win.Telemedico.q || []).push(args);
     };
+    win.Telemedico(widgetConfig);
 
     const js = document.createElement("script");
     js.id = "Telemedico";
@@ -60,9 +68,7 @@ export default function WizytaPage() {
     const fjs = document.getElementsByTagName("script")[0];
     fjs.parentNode!.insertBefore(js, fjs);
 
-    win.Telemedico(widgetConfig);
-
-    // Inject styles into shadow root to hide POZ/NFZ elements
+    // Styles to hide POZ/NFZ/free visit elements
     const hideStyles = `
       .fk-footer__poz,
       .fk-footer__not-logged-user-poz,
@@ -71,40 +77,38 @@ export default function WizytaPage() {
       .info-content-poz,
       .fk-declaration-info__poz-signup-mobile,
       [class*="poz-signup"],
-      [class*="book-free"] {
+      [class*="book-free"],
+      .fk-button--secondary {
         display: none !important;
       }
     `;
 
-    const observer = new MutationObserver(() => {
+    const injectIntoShadow = () => {
       const widgetEl = document.getElementById("telemedico-widget");
-      if (!widgetEl) return;
-      const shadowRoot = widgetEl.shadowRoot || widgetEl.querySelector("*")?.shadowRoot;
-      if (shadowRoot && !shadowRoot.querySelector("#qd-hide-poz")) {
+      if (!widgetEl?.shadowRoot) return;
+      const sr = widgetEl.shadowRoot;
+      if (!sr.querySelector("#qd-hide-poz")) {
         const style = document.createElement("style");
         style.id = "qd-hide-poz";
         style.textContent = hideStyles;
-        shadowRoot.appendChild(style);
+        sr.appendChild(style);
       }
-      // Also check children for shadow roots
-      widgetEl.querySelectorAll("*").forEach((el) => {
-        const sr = el.shadowRoot;
-        if (sr && !sr.querySelector("#qd-hide-poz")) {
-          const style = document.createElement("style");
-          style.id = "qd-hide-poz";
-          style.textContent = hideStyles;
-          sr.appendChild(style);
-        }
-      });
-    });
+    };
 
+    // Poll every 500ms to keep styles injected (survives re-renders)
+    const interval = setInterval(injectIntoShadow, 500);
+
+    // Also use MutationObserver for immediate injection
+    const observer = new MutationObserver(injectIntoShadow);
     observer.observe(document.getElementById("telemedico-widget") || document.body, {
       childList: true,
       subtree: true,
     });
 
     return () => {
+      clearInterval(interval);
       observer.disconnect();
+      Element.prototype.attachShadow = origAttachShadow;
       const el = document.getElementById("Telemedico");
       if (el) el.remove();
     };
