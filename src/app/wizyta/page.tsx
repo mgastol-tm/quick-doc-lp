@@ -68,8 +68,12 @@ export default function WizytaPage() {
     const fjs = document.getElementsByTagName("script")[0];
     fjs.parentNode!.insertBefore(js, fjs);
 
-    // Styles to hide POZ/NFZ/free visit elements
+    // Styles to hide POZ/NFZ elements and override font
     const hideStyles = `
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+      *, *::before, *::after {
+        font-family: 'Inter', sans-serif !important;
+      }
       .fk-footer__poz,
       .fk-footer__not-logged-user-poz,
       .poz-info,
