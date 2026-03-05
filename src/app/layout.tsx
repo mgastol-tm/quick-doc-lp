@@ -25,7 +25,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
         />
-        <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="d527c754-16a8-4a01-8d77-b8009211edef" data-culture="PL" data-blockingmode="auto" async />
+        <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="52f980d9-6576-4679-a4cf-dfc63ab4b558" data-blockingmode="auto" type="text/javascript" />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-1JPTVN6VCT" />
         <script
           dangerouslySetInnerHTML={{
