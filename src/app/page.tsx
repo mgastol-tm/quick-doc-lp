@@ -79,7 +79,7 @@ const specializations = [
   { icon: Stethoscope, title: "Internista", desc: "Przeziębienie, grypa, bóle głowy, infekcje i inne dolegliwości ogólne.", price: "89 zł", href: "/wizyta", highlighted: false, comingSoon: true },
   { icon: Baby, title: "Pediatra", desc: "Konsultacje dla dzieci i młodzieży. Gorączka, wysypka, kaszel.", price: "95 zł", href: "/wizyta", highlighted: false, comingSoon: true },
   { icon: FileCheck, title: "Konsultacja w sprawie zwolnienia L4", desc: "Wygodne e-zwolnienie lekarskie online. Widoczne od razu na koncie IKP.", price: "79 zł", href: "/zwolnienia-lekarskie-online-l4", highlighted: true, comingSoon: false },
-  { icon: Brain, title: "Psychiatra", desc: "Lęk, depresja, bezsenność. Recepta na leki psychiatryczne online.", price: "269 zł", href: "/wizyta", highlighted: false, comingSoon: true },
+  { icon: Brain, title: "Psychiatra", desc: "Lęk, depresja, bezsenność. Konsultacja psychiatryczna online.", price: "269 zł", href: "/wizyta", highlighted: false, comingSoon: true },
 ];
 
 function Specializations() {
@@ -143,7 +143,7 @@ function Specializations() {
 const steps = [
   { num: "1", icon: Video, title: "Telekonsultacja", desc: "Umów się na wizytę online. Lekarz skontaktuje się z Tobą telefonicznie, przez wideo lub czat — wygodnie, z domu." },
   { num: "2", icon: ClipboardList, title: "Opisz objawy", desc: "Opowiedz lekarzowi o swoich dolegliwościach. Lekarz przeprowadzi wywiad i postawi diagnozę." },
-  { num: "3", icon: FileText, title: "Otrzymaj zalecenia", desc: "Lekarz przekaże zalecenia medyczne, e-receptę lub e-zwolnienie. Dokumenty wysyłane elektronicznie, od razu po konsultacji." },
+  { num: "3", icon: FileText, title: "Otrzymaj zalecenia", desc: "Lekarz przekaże zalecenia medyczne lub e-zwolnienie. Dokumenty wysyłane elektronicznie, od razu po konsultacji." },
 ];
 
 function HowItWorks() {
@@ -273,7 +273,7 @@ function Benefits() {
 
 /* ───────── Social Proof ───────── */
 const testimonials = [
-  { quote: "E-recepta i e-ZLA wystawione i przesłane na maila w ciągu 15 minut od wizyty. Również od strony formalnej wizyta przebiegła wzorowo.", name: "Tomasz", initials: "TK" },
+  { quote: "E-ZLA wystawione i przesłane na maila w ciągu 15 minut od wizyty. Również od strony formalnej wizyta przebiegła wzorowo.", name: "Tomasz", initials: "TK" },
   { quote: "Przemiła konsultacja z Panią Doktor, bardzo profesjonalne i empatyczne podejście. Pani Doktor była niezwykle zaangażowana i okazała dużą troskę o moje zdrowie.", name: "Katarzyna", initials: "KW" },
   { quote: "Rzeczowa konsultacja. Każda z dolegliwości została zaopiekowana i omówiona pod kątem ewentualnych przyczyn. Polecam na 100%.", name: "Michał", initials: "MR" },
   { quote: "Bardzo szczegółowy i konkretny wywiad, jestem bardzo zadowolona — Doktor nie zlekceważył żadnych objawów.", name: "Agnieszka", initials: "AL" },

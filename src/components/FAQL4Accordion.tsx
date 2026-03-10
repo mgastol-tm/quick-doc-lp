@@ -21,10 +21,6 @@ const faqs = [
     a: "Decyzja o wystawieniu zwolnienia zawsze należy do lekarza. Lekarz przeprowadza pełną konsultację medyczną i ocenia zasadność zwolnienia. Jeśli nie stwierdzi podstaw, przekaże Ci zalecenia dotyczące leczenia. Opłata obejmuje samą konsultację, niezależnie od wyniku.",
   },
   {
-    q: "Czy mogę otrzymać receptę podczas konsultacji?",
-    a: "Tak, lekarz może wystawić e-receptę podczas konsultacji. Recepta zostanie przesłana na Twój adres e-mail i będzie dostępna w każdej aptece w Polsce.",
-  },
-  {
     q: "Gdzie zobaczę wystawione e-ZLA?",
     a: "E-zwolnienie jest widoczne od razu na Twoim koncie w Internetowym Koncie Pacjenta (IKP) na pacjent.gov.pl. Zostaje też automatycznie przesłane do ZUS.",
   },

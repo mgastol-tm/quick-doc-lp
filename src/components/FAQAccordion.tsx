@@ -13,10 +13,6 @@ const faqs = [
     a: "Obecnie oferujemy konsultacje w sprawie zwolnień lekarskich (L4/e-ZLA). Wkrótce uruchomimy konsultacje z internistą, pediatrą i psychiatrą.",
   },
   {
-    q: "Czy mogę otrzymać receptę podczas konsultacji?",
-    a: "Tak, lekarz może wystawić e-receptę podczas konsultacji online. Recepta zostanie przesłana na Twój adres e-mail i będzie dostępna w każdej aptece w Polsce.",
-  },
-  {
     q: "Czy e-zwolnienie (L4) jest prawnie ważne?",
     a: "Tak, e-zwolnienie (e-ZLA) wystawione po konsultacji z naszym lekarzem jest w pełni prawnie ważne, zgodnie z ustawą z dnia 25 czerwca 1999 r. o świadczeniach pieniężnych z ubezpieczenia społecznego w razie choroby i macierzyństwa. Trafia automatycznie do ZUS i jest akceptowane przez każdego pracodawcę w Polsce.",
   },

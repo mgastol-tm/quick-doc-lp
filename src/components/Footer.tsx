@@ -12,7 +12,6 @@ const linkHrefs: Record<string, string> = {
   "FAQ": "/#faq",
   "Konsultacje telemedyczne": "https://telemedi.com/pl/konsultacje-telemedyczne-czat-online-teleporady/",
   "Zwolnienie (L4) online": "https://telemedi.com/pl/zwolnienie-online-l4-przez-internet/",
-  "Recepta online": "https://telemedi.com/pl/recepta-online/",
   "Polityka prywatności": "https://telemedi.com/pl/privacy-policy/",
   "Regulamin": "https://telemedi.com/pl/terms-and-conditions/",
   "Regulamin organizacyjny": "https://telemedi.com/pl/regulamin-organizacyjny/",
