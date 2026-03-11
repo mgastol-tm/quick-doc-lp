@@ -37,7 +37,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             `,
           }}
         />
-        <script src="https://t.contentsquare.net/uxa/3b3217b57ca5d.js" async />
+        <script src="https://t.contentsquare.net/uxa/b16f5ad0f2797.js" async />
       </head>
       <body className="font-body">
         {children}
