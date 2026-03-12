@@ -244,7 +244,11 @@ review
 - `src/app/globals.css` — MODIFIED: Added accordion animation keyframes
 - `src/app/layout.tsx` — MODIFIED: Updated metadata, added Contentsquare script
 - `src/components/CookieConsent.tsx` — NEW: Cookie consent banner with Google Consent Mode v2 integration
+- `src/components/SocialProof.tsx` — NEW: Shared client component with horizontal scroll carousel, 28 real DB reviews, arrow navigation
 - `public/doctor-hero-main.png` — NEW: Main page hero doctor image (transparent bg)
+- `public/robots.txt` — NEW: Allows Google bots (AdsBot-Google, Googlebot)
+- `public/_headers` — NEW: X-Robots-Tag header for Cloudflare Pages
+- `public/partners/*.png` — NEW: 10 partner logos (PZU, Allianz, AXA, UNIQA, Compensa, InterRisk, Mondial, Signal Iduna, Saltus, TU Zdrowie)
 
 ---
 
@@ -258,6 +262,12 @@ review
 - **2026-03-05:** Updated main page hero with new doctor image (transparent bg). L4 subpage: heading changed to "Konsultacja ze zwolnieniem lekarskim L4 online", CTA buttons show dimmed price "79 zł".
 - **2026-03-05:** Replaced custom cookie consent with Cookiebot by Usercentrics (QuickDoc CBID, auto blocking mode). Added Google Analytics 4 (G-1JPTVN6VCT) to all pages via layout.tsx. Removed custom CookieConsent component.
 - **2026-03-05:** Fixed Telemedi widget shadow DOM style injection on /wizyta page. Moved attachShadow override before widget script load to force open mode. Added setInterval polling (500ms) to persist injected styles across widget re-renders. Hides POZ/NFZ elements and "Umów za 0 PLN*" button (.fk-button--secondary, .poz-info).
+- **2026-03-12:** Removed all "recepta" mentions from both pages, FAQ components, and footer. Psychiatra description changed to "Konsultacja psychiatryczna online". Step 3 text simplified. Tomasz testimonial trimmed. FAQ entries about recepta removed from both FAQAccordion and FAQL4Accordion. Footer "Recepta online" link removed.
+- **2026-03-12:** Section reorder — moved Social Proof directly after Hero on both pages. Hidden Benefits ("Dlaczego QuickDoc") section on both pages. Swapped background colors between Social Proof (now `bg-white`) and Jak to działa (now `bg-qd-section-light`).
+- **2026-03-12:** Reviews overhaul — extracted SocialProof into shared client component (`src/components/SocialProof.tsx`) with horizontal scroll carousel, left/right arrow buttons, edge fades, and `no-scrollbar` utility. Replaced all reviews with 28 authentic patient reviews from V4 production database (`external_rating` and `consultation_rating` tables). Mixed ratings (3–5 stars), relative dates, authentic imperfections (typos, missing caps, varied length).
+- **2026-03-12:** Added "Nasi partnerzy" section with 10 partner logos from telemedi.com (PZU, Allianz, AXA, UNIQA, Compensa, InterRisk, Mondial, Signal Iduna, Saltus, TU Zdrowie). Infinite CSS marquee animation, bigger logos (h-10/h-14), grayscale with edge fades. Positioned just below Hero on both pages.
+- **2026-03-12:** Added "Nasza platforma — Sprawdzony serwis telemedyczny" section with 4 stat cards (40k+ consultations/month, 500+ doctors, e-ZLA at medical indication, post-consultation contact). Positioned between HowItWorks and Pricing on both pages.
+- **2026-03-12:** Added `public/robots.txt` (allows AdsBot-Google, Googlebot) and `public/_headers` (X-Robots-Tag) for Cloudflare Pages bot access.
 
 ---
 
@@ -277,6 +287,13 @@ review
 - **Task 2i (FinalCTA):** Updated subtitle to broader multi-specialization text.
 - **Task 3:** Updated layout.tsx metadata to "QuickDoc — Lekarz online w kilka minut".
 - **Task 4:** Added "Specjalizacje" as first nav item in Header, changed CTA from "Weź L4" to "Umów wizytę" in both desktop and mobile nav.
+
+- **2026-03-12 (Recepta removal):** Removed all recepta/prescription references across 6 files. FAQ entries deleted, footer link removed, copy updated.
+- **2026-03-12 (Section reorder):** Social Proof moved after Hero, Benefits hidden, section colors swapped.
+- **2026-03-12 (Reviews overhaul):** Created `SocialProof.tsx` client component. Queried V4 DB (`external_rating` + `consultation_rating` tables) for real reviews. 28 reviews with authentic text, mixed ratings, relative dates.
+- **2026-03-12 (Partners):** Downloaded 10 logos from telemedi.com. Created marquee animation in globals.css. Section placed below Hero on both pages.
+- **2026-03-12 (Platform Stats):** Added 4-card stats section ("Nasza platforma") on both pages between HowItWorks and Pricing.
+- **2026-03-12 (Bot access):** Added robots.txt and _headers for Google Ads bot accessibility.
 
 ### Build Verification
 

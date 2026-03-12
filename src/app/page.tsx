@@ -1,12 +1,13 @@
 import {
   ShieldCheck, Clock4, FileCheck, ArrowRight, ClipboardList,
   Video, FileText, Zap, Laptop, Shield, Lock,
-  Stethoscope, Baby, Brain,
+  Stethoscope, Baby, Brain, MonitorPlay, UserRound, FileBadge, PhoneCall,
 } from "lucide-react";
 import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FAQAccordion from "@/components/FAQAccordion";
+import SocialProof from "@/components/SocialProof";
 
 const container = "max-w-[1240px] mx-auto w-full px-5 md:px-10";
 
@@ -148,7 +149,7 @@ const steps = [
 
 function HowItWorks() {
   return (
-    <section id="jak-to-dziala" className="bg-white scroll-mt-[72px]">
+    <section id="jak-to-dziala" className="bg-qd-section-light scroll-mt-[72px]">
       <div className={`${container} flex flex-col items-center gap-7 md:gap-14 py-12 md:py-20`}>
         <div className="flex flex-col items-center gap-3">
           <span className="font-heading text-[11px] md:text-[13px] font-semibold text-qd-primary tracking-[2px]">
@@ -271,71 +272,41 @@ function Benefits() {
   );
 }
 
-/* ───────── Social Proof ───────── */
-const testimonials = [
-  { quote: "E-ZLA wystawione i przesłane na maila w ciągu 15 minut od wizyty. Również od strony formalnej wizyta przebiegła wzorowo.", name: "Tomasz", initials: "TK" },
-  { quote: "Przemiła konsultacja z Panią Doktor, bardzo profesjonalne i empatyczne podejście. Pani Doktor była niezwykle zaangażowana i okazała dużą troskę o moje zdrowie.", name: "Katarzyna", initials: "KW" },
-  { quote: "Rzeczowa konsultacja. Każda z dolegliwości została zaopiekowana i omówiona pod kątem ewentualnych przyczyn. Polecam na 100%.", name: "Michał", initials: "MR" },
-  { quote: "Bardzo szczegółowy i konkretny wywiad, jestem bardzo zadowolona — Doktor nie zlekceważył żadnych objawów.", name: "Agnieszka", initials: "AL" },
-  { quote: "Bardzo dobra forma kontaktu z lekarzem. Sprawna i skuteczna konsultacja, bez kolejek i stresu.", name: "Paweł", initials: "PB" },
-  { quote: "Polecam ze szczerego serca. Pan doktor rzetelnie przyjrzał się wynikom moich badań, a następnie szczegółowo omówił dalsze kroki.", name: "Marta", initials: "MS" },
+
+/* ───────── Platform Stats ───────── */
+const platformStats = [
+  { icon: MonitorPlay, title: "40 000+ konsultacji miesięcznie", desc: "Przez naszą platformę realizowanych jest ponad 40 tys. konsultacji każdego miesiąca." },
+  { icon: UserRound, title: "500+ lekarzy", desc: "Z naszej platformy korzysta ponad 500 lekarzy specjalistów z pełnymi uprawnieniami." },
+  { icon: FileBadge, title: "E-zwolnienie przy wskazaniach", desc: "Możesz otrzymać zwolnienie lekarskie w przypadku wskazań medycznych — widoczne od razu w IKP." },
+  { icon: PhoneCall, title: "Kontakt po konsultacji", desc: "Możesz dopytać lekarza o szczegóły nawet po zakończonej konsultacji." },
 ];
 
-function SocialProof() {
+function PlatformStats() {
   return (
-    <section className="bg-qd-section-light overflow-hidden pb-12 md:pb-20">
-      <div className={`${container} flex flex-col items-center gap-8 md:gap-12 py-12 md:py-20`}>
-        {/* Stats */}
-        <div className="flex items-center justify-center w-full max-w-[700px]">
-          {[
-            { num: "62 000+", label: "Pacjentów", labelDesktop: "Obsłużonych pacjentów" },
-            { num: "12 min", label: "Śr. czas", labelDesktop: "Średni czas konsultacji", border: true },
-            { num: "4.9/5", label: "Ocena", labelDesktop: "Ocena pacjentów" },
-          ].map(({ num, label, labelDesktop, border }) => (
-            <div key={num} className={`flex-1 flex flex-col items-center gap-1 py-4 md:py-6 ${border ? "border-x border-qd-border" : ""}`}>
-              <span className="font-heading text-[28px] md:text-5xl font-semibold text-qd-primary tracking-[-1px]">{num}</span>
-              <span className="font-body text-[11px] md:text-sm font-medium text-qd-text-secondary">
-                <span className="md:hidden">{label}</span>
-                <span className="hidden md:inline">{labelDesktop}</span>
-              </span>
+    <section className="bg-qd-section-green">
+      <div className={`${container} flex flex-col items-center gap-8 md:gap-14 py-12 md:py-20`}>
+        <div className="flex flex-col items-center gap-3">
+          <span className="font-heading text-[11px] md:text-[13px] font-semibold text-qd-primary tracking-[2px]">
+            NASZA PLATFORMA
+          </span>
+          <h2 className="font-heading text-[26px] md:text-[40px] font-semibold text-qd-text tracking-[-1px] text-center">
+            Sprawdzony serwis telemedyczny
+          </h2>
+        </div>
+
+        <div className="w-full grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6">
+          {platformStats.map(({ icon: Icon, title, desc }) => (
+            <div key={title} className="bg-white border border-qd-border rounded-xl md:rounded-2xl p-5 md:p-7 flex flex-col items-center text-center gap-3 md:gap-4">
+              <div className="w-12 h-12 md:w-14 md:h-14 bg-qd-primary-light rounded-full flex items-center justify-center">
+                <Icon className="w-6 h-6 md:w-7 md:h-7 text-qd-primary" />
+              </div>
+              <h3 className="font-heading text-sm md:text-base font-semibold text-qd-text">{title}</h3>
+              <p className="font-body text-[12px] md:text-[13px] text-qd-text-secondary leading-[1.5]">{desc}</p>
             </div>
           ))}
         </div>
-
-        {/* Testimonials - mobile: stacked */}
-        <div className="w-full flex flex-col md:hidden gap-3">
-          {testimonials.map((t) => (
-            <TestimonialCard key={t.name} {...t} />
-          ))}
-        </div>
-      </div>
-
-      {/* Desktop carousel - full width for visual effect */}
-      <div className="hidden md:block relative w-full h-[290px] -mt-4">
-        <div className="absolute inset-0 flex gap-4 px-4 items-start justify-center">
-          {[...testimonials, ...testimonials, ...testimonials, ...testimonials].map((t, i) => (
-            <TestimonialCard key={`${t.name}-${i}`} {...t} desktop />
-          ))}
-        </div>
-        <div className="absolute left-0 top-0 bottom-0 w-[100px] bg-gradient-to-r from-qd-section-light to-transparent z-10" />
-        <div className="absolute right-0 top-0 bottom-0 w-[100px] bg-gradient-to-l from-qd-section-light to-transparent z-10" />
       </div>
     </section>
-  );
-}
-
-function TestimonialCard({ quote, name, initials, desktop }: { quote: string; name: string; initials: string; desktop?: boolean }) {
-  return (
-    <div className={`bg-white border border-qd-border rounded-xl md:rounded-2xl p-5 md:p-7 flex flex-col gap-3 md:gap-4 ${desktop ? "w-[340px] h-[270px] shrink-0" : "w-full h-[220px]"}`}>
-      <span className="text-sm md:text-base text-qd-stars">★★★★★</span>
-      <p className="font-body text-[13px] md:text-sm text-qd-text leading-[1.6] flex-1">&ldquo;{quote}&rdquo;</p>
-      <div className="flex items-center gap-2.5 md:gap-3 mt-auto">
-        <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-qd-primary-light flex items-center justify-center">
-          <span className="font-heading text-xs md:text-sm font-semibold text-qd-primary">{initials}</span>
-        </div>
-        <span className="font-heading text-[13px] md:text-sm font-semibold text-qd-text">{name}</span>
-      </div>
-    </div>
   );
 }
 
@@ -396,6 +367,43 @@ function Pricing() {
   );
 }
 
+/* ───────── Partners ───────── */
+const partners = [
+  { name: "PZU", src: "/partners/pzu.png" },
+  { name: "Allianz", src: "/partners/allianz.png" },
+  { name: "AXA", src: "/partners/axa.png" },
+  { name: "UNIQA", src: "/partners/uniqa.png" },
+  { name: "Compensa", src: "/partners/compensa.png" },
+  { name: "InterRisk", src: "/partners/interrisk.png" },
+  { name: "Mondial", src: "/partners/mondial.png" },
+  { name: "Signal Iduna", src: "/partners/signal-iduna.png" },
+  { name: "Saltus", src: "/partners/saltus.png" },
+  { name: "TU Zdrowie", src: "/partners/tu-zdrowie.png" },
+];
+
+function Partners() {
+  return (
+    <section className="bg-white border-y border-qd-border overflow-hidden py-8 md:py-10">
+      <div className="flex flex-col items-center gap-5 md:gap-6">
+        <span className="font-heading text-[11px] md:text-[13px] font-semibold text-qd-text-secondary tracking-[2px]">
+          NASI PARTNERZY
+        </span>
+        <div className="relative w-full">
+          <div className="flex w-max animate-[marquee_25s_linear_infinite]">
+            {[...partners, ...partners].map(({ name, src }, i) => (
+              <div key={`${name}-${i}`} className="flex items-center justify-center px-6 md:px-10 shrink-0">
+                <Image src={src} alt={name} width={160} height={56} className="h-10 md:h-14 w-auto object-contain opacity-40 grayscale" />
+              </div>
+            ))}
+          </div>
+          <div className="absolute left-0 top-0 bottom-0 w-[60px] md:w-[120px] bg-gradient-to-r from-white to-transparent z-10" />
+          <div className="absolute right-0 top-0 bottom-0 w-[60px] md:w-[120px] bg-gradient-to-l from-white to-transparent z-10" />
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ───────── FAQ ───────── */
 function FAQ() {
   return (
@@ -442,10 +450,12 @@ export default function Home() {
     <main className="flex flex-col min-h-screen">
       <Header />
       <Hero />
+      <Partners />
+      <SocialProof />
       <Specializations />
       <HowItWorks />
-      <Benefits />
-      <SocialProof />
+      {/* <Benefits /> */}
+      {/* <PlatformStats /> */}
       <Pricing />
       <FAQ />
       <FinalCTA />

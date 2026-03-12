@@ -158,3 +158,61 @@ Disabled upsell banners and NFZ free visit elements:
 - `otherMessagesForB2bClinicEnabled: true` — hides NFZ/POZ button in sick leave flow
 - `showPaidVisitsOnly: true`
 - Shadow root CSS injection via `MutationObserver` to hide any remaining POZ elements
+
+## 17. Remove all "recepta" mentions
+
+Removed all references to prescriptions/e-recepta across both pages and components:
+
+- **`src/app/page.tsx`** — psychiatra description, step 3 text, Tomasz testimonial
+- **`src/app/zwolnienia-lekarskie-online-l4/page.tsx`** — Tomasz testimonial
+- **`src/components/FAQAccordion.tsx`** — removed FAQ about recepta
+- **`src/components/FAQL4Accordion.tsx`** — removed FAQ about recepta
+- **`src/components/Footer.tsx`** — removed "Recepta online" link
+
+## 18. Section reorder & hide Benefits
+
+- Moved Social Proof section to directly after Hero on both pages
+- Hidden "Dlaczego QuickDoc" (Benefits) section on both pages
+- Swapped background colors between Social Proof (`bg-white`) and Jak to działa (`bg-qd-section-light`)
+
+## 19. Reviews overhaul — real DB data + horizontal carousel
+
+### Scrollable carousel with arrows
+Extracted `SocialProof` into shared client component (`src/components/SocialProof.tsx`) with:
+- Horizontal scroll carousel (swipe on mobile, arrow buttons on desktop)
+- Edge fade gradients
+- `no-scrollbar` CSS utility added to `globals.css`
+
+### 28 real reviews from database
+Replaced all made-up reviews with authentic patient reviews from the V4 production database:
+- **`external_rating`** table — reviews with author names and written text
+- **`consultation_rating`** table — filtered for actual text (not just checkbox tags)
+- Mixed ratings (3–5 stars), relative dates ("5d temu", "1m temu")
+- Authentic imperfections preserved: typos, missing caps, ALL CAPS, casual tone, varied length
+
+## 20. "Nasi partnerzy" section
+
+Added partner logos section (between Pricing and FAQ) on both pages.
+
+Logos downloaded from `telemedi.com/pl/` to `public/partners/`:
+PZU, Allianz, AXA, UNIQA, Compensa, InterRisk, Mondial, Signal Iduna, Saltus, TU Zdrowie
+
+- Grayscale by default, colorize on hover
+- Flex-wrap layout, responsive sizing
+
+## 21. "Nasza platforma" section
+
+Added platform stats section (between HowItWorks and Pricing) on both pages with 4 cards:
+
+| Icon | Title | Description |
+|------|-------|-------------|
+| MonitorPlay | 40 000+ konsultacji miesięcznie | Ponad 40 tys. konsultacji każdego miesiąca |
+| UserRound | 500+ lekarzy | Ponad 500 lekarzy specjalistów |
+| FileBadge | E-zwolnienie przy wskazaniach | Zwolnienie widoczne od razu w IKP |
+| PhoneCall | Kontakt po konsultacji | Możliwość dopytania po wizycie |
+
+## 22. Cloudflare bot access fixes
+
+Added files to ensure Google Ads bot can access the site:
+- **`public/robots.txt`** — explicitly allows AdsBot-Google, Googlebot
+- **`public/_headers`** — `X-Robots-Tag: index, follow`
