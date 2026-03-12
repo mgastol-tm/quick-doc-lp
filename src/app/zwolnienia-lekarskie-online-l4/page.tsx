@@ -277,7 +277,7 @@ function Partners() {
           NASI PARTNERZY
         </span>
         <div className="relative w-full">
-          <div className="flex w-max animate-[marquee_25s_linear_infinite]">
+          <div className="flex w-max animate-[marquee_25s_linear_infinite] will-change-transform [backface-visibility:hidden]">
             {[...partners, ...partners].map(({ name, src }, i) => (
               <div key={`${name}-${i}`} className="flex items-center justify-center px-4 md:px-6 shrink-0">
                 <Image src={src} alt={name} width={180} height={64} className="h-12 md:h-16 w-auto object-contain opacity-40 grayscale" />

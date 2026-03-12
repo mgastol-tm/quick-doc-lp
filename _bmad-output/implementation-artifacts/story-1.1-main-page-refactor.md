@@ -268,6 +268,8 @@ review
 - **2026-03-12:** Added "Nasi partnerzy" section with 10 partner logos from telemedi.com (PZU, Allianz, AXA, UNIQA, Compensa, InterRisk, Mondial, Signal Iduna, Saltus, TU Zdrowie). Infinite CSS marquee animation, bigger logos (h-10/h-14), grayscale with edge fades. Positioned just below Hero on both pages.
 - **2026-03-12:** Added "Nasza platforma — Sprawdzony serwis telemedyczny" section with 4 stat cards (40k+ consultations/month, 500+ doctors, e-ZLA at medical indication, post-consultation contact). Positioned between HowItWorks and Pricing on both pages.
 - **2026-03-12:** Added `public/robots.txt` (allows AdsBot-Google, Googlebot) and `public/_headers` (X-Robots-Tag) for Cloudflare Pages bot access.
+- **2026-03-12:** Integrated OpenReplay session recording (project key `8jaoxbd4jjp2kh0BbByA`) in `layout.tsx` using standard async snippet from `static.openreplay.com`.
+- **2026-03-12:** Fixed iOS mobile marquee animation — changed `translateX` to `translate3d` for GPU compositing, added `will-change-transform` and `backface-visibility: hidden` to marquee container on both pages.
 
 ---
 
