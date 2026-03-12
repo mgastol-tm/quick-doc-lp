@@ -270,6 +270,7 @@ review
 - **2026-03-12:** Added `public/robots.txt` (allows AdsBot-Google, Googlebot) and `public/_headers` (X-Robots-Tag) for Cloudflare Pages bot access.
 - **2026-03-12:** Integrated OpenReplay session recording (project key `8jaoxbd4jjp2kh0BbByA`) in `layout.tsx` using standard async snippet from `static.openreplay.com`.
 - **2026-03-12:** Fixed iOS mobile marquee animation — changed `translateX` to `translate3d` for GPU compositing, added `will-change-transform` and `backface-visibility: hidden` to marquee container on both pages.
+- **2026-03-12:** Fixed marquee white-space gaps — restructured into two separate identical flex containers with fixed-width logo slots (`w-[120px]`/`w-[180px]`), `loading="eager"` on all logo images to prevent lazy-load layout shift, and `translateX(-50%)` for seamless loop.
 
 ---
 

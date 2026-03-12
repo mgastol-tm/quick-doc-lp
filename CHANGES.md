@@ -216,3 +216,17 @@ Added platform stats section (between HowItWorks and Pricing) on both pages with
 Added files to ensure Google Ads bot can access the site:
 - **`public/robots.txt`** — explicitly allows AdsBot-Google, Googlebot
 - **`public/_headers`** — `X-Robots-Tag: index, follow`
+
+## 23. OpenReplay session recording
+
+Integrated OpenReplay tracking (project key `8jaoxbd4jjp2kh0BbByA`) in `src/app/layout.tsx` using the standard async snippet from `static.openreplay.com`.
+
+## 24. Partner marquee iOS/mobile fixes
+
+Fixed partner logos marquee not looping properly on iOS and showing white-space gaps:
+
+- `translate3d` instead of `translateX` for GPU compositing on iOS Safari
+- `will-change-transform` and `backface-visibility: hidden` on marquee container
+- Restructured into two separate identical flex containers with fixed-width logo slots (`w-[120px]` mobile / `w-[180px]` desktop)
+- `loading="eager"` on all logo `<Image>` elements to prevent lazy-load layout shift
+- Applied to both main page and L4 subpage

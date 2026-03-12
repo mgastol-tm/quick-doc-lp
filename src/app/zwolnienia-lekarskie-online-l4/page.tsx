@@ -276,11 +276,15 @@ function Partners() {
         <span className="font-heading text-[11px] md:text-[13px] font-semibold text-qd-text-secondary tracking-[2px]">
           NASI PARTNERZY
         </span>
-        <div className="relative w-full">
+        <div className="relative w-full overflow-hidden">
           <div className="flex w-max animate-[marquee_25s_linear_infinite] will-change-transform [backface-visibility:hidden]">
-            {[...partners, ...partners].map(({ name, src }, i) => (
-              <div key={`${name}-${i}`} className="flex items-center justify-center px-4 md:px-6 shrink-0">
-                <Image src={src} alt={name} width={180} height={64} className="h-12 md:h-16 w-auto object-contain opacity-40 grayscale" />
+            {[0, 1].map((copy) => (
+              <div key={copy} className="flex shrink-0">
+                {partners.map(({ name, src }) => (
+                  <div key={`${name}-${copy}`} className="flex items-center justify-center w-[120px] md:w-[180px] shrink-0">
+                    <Image src={src} alt={name} width={180} height={64} loading="eager" className="h-12 md:h-16 w-auto object-contain opacity-40 grayscale" />
+                  </div>
+                ))}
               </div>
             ))}
           </div>
