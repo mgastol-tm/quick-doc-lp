@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Inter } from "next/font/google";
+import OpenReplayTracker from "@/components/OpenReplayTracker";
+import TrackingParams from "@/components/TrackingParams";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -38,29 +40,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
         <script src="https://t.contentsquare.net/uxa/b16f5ad0f2797.js" async />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function(A,s,a,y,e,r){
-                r=window.OpenReplay=[e,r,y,[s-1]];
-                s=document.createElement('script');s.src=A;s.async=!a;
-                document.getElementsByTagName('head')[0].appendChild(s);
-                r.start=function(v){r.push([0])};
-                r.stop=function(v){r.push([1])};
-                r.setUserID=function(id){r.push([2,id])};
-                r.setUserAnonymousID=function(id){r.push([3,id])};
-                r.setMetadata=function(k,v){r.push([4,k,v])};
-                r.event=function(k,p,i){r.push([5,k,p,i])};
-                r.issue=function(k,p){r.push([6,k,p])};
-                r.isActive=function(){return false};
-                r.getSessionToken=function(){};
-                r.getSessionID=function(){};
-              })("//static.openreplay.com/latest/openreplay.js",1,0,"8jaoxbd4jjp2kh0BbByA",44);
-            `,
-          }}
-        />
       </head>
       <body className="font-body">
+        <TrackingParams />
+        <OpenReplayTracker />
         {children}
       </body>
     </html>

@@ -243,6 +243,7 @@ review
 - `src/components/FAQL4Accordion.tsx` — NEW: Working FAQ accordion for L4 subpage with L4-specific Q&A
 - `src/app/globals.css` — MODIFIED: Added accordion animation keyframes
 - `src/app/layout.tsx` — MODIFIED: Updated metadata, added Contentsquare script
+- `src/components/TrackingParams.tsx` — NEW: Client component that captures gclid/UTM params from URL into sessionStorage on any page load
 - `src/components/CookieConsent.tsx` — NEW: Cookie consent banner with Google Consent Mode v2 integration
 - `src/components/SocialProof.tsx` — NEW: Shared client component with horizontal scroll carousel, 28 real DB reviews, arrow navigation
 - `public/doctor-hero-main.png` — NEW: Main page hero doctor image (transparent bg)
@@ -271,6 +272,8 @@ review
 - **2026-03-12:** Integrated OpenReplay session recording (project key `8jaoxbd4jjp2kh0BbByA`) in `layout.tsx` using standard async snippet from `static.openreplay.com`.
 - **2026-03-12:** Fixed iOS mobile marquee animation — changed `translateX` to `translate3d` for GPU compositing, added `will-change-transform` and `backface-visibility: hidden` to marquee container on both pages.
 - **2026-03-12:** Fixed marquee white-space gaps — restructured into two separate identical flex containers with fixed-width logo slots (`w-[120px]`/`w-[180px]`), `loading="eager"` on all logo images to prevent lazy-load layout shift, and `translateX(-50%)` for seamless loop.
+- **2026-03-13:** [x] Updated Contentsquare script ID from `3b3217b57ca5d` to `b16f5ad0f2797` (includes Hotjar functionality post-acquisition) in `layout.tsx`.
+- **2026-03-13:** [x] Added global tracking param persistence — new `TrackingParams` component in root layout captures `gclid`, `utm_source`, `utm_medium`, `utm_campaign`, `utm_content`, `utm_term`, `utm_id` from URL into `sessionStorage.initialSearchParams` on any landing page. Widget's `getGAParams()` on `/wizyta` picks them up automatically. Params persist across client-side navigation for the full session.
 
 ---
 
