@@ -211,21 +211,20 @@ export default function EmbedCheckout() {
   // Loading + ready states
   return (
     <div className="w-full relative">
-      {/* Shimmer skeleton - visible while loading, positioned above embed */}
+      {/* Shimmer skeleton - absolutely positioned over the embed while loading */}
       {state === "loading" && (
-        <div className="flex flex-col gap-4 animate-pulse">
+        <div className="absolute inset-0 z-10 flex flex-col gap-4 animate-pulse bg-white">
           <div className="h-12 bg-qd-primary/10 rounded-xl" />
           <div className="h-64 bg-qd-primary/10 rounded-xl" />
           <div className="h-12 bg-qd-primary/10 rounded-xl w-2/3 mx-auto" />
         </div>
       )}
-      {/* Embed container — always in DOM and in layout flow so iframe can render */}
+      {/* Embed container — always visible and full-size so iframe can render */}
       <div
         id={CONTAINER_ID}
         style={{
           overflow: "hidden",
-          opacity: state === "ready" ? 1 : 0,
-          height: state === "loading" ? 0 : undefined,
+          minHeight: state === "loading" ? "400px" : undefined,
           width: "100%",
           transition: "opacity 0.3s ease",
         }}
