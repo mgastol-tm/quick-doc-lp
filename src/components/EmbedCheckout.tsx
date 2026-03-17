@@ -86,7 +86,14 @@ export default function EmbedCheckout() {
           onHeightChange: (height) => {
             if (height > 0) {
               setIframeHeight(height);
-              setState("ready");
+              setState((prev) => prev === "loading" ? "ready" : prev);
+              // Trim excess bottom padding from Telemedi's iframe
+              requestAnimationFrame(() => {
+                const iframe = document.querySelector(`#${CONTAINER_ID} iframe`) as HTMLIFrameElement;
+                if (iframe) {
+                  iframe.style.marginBottom = "-250px";
+                }
+              });
             }
           },
         });
@@ -216,7 +223,6 @@ export default function EmbedCheckout() {
       <div
         id={CONTAINER_ID}
         style={{
-          height: iframeHeight > 0 ? `${iframeHeight}px` : undefined,
           overflow: "hidden",
           opacity: state === "ready" ? 1 : 0,
           position: state === "loading" ? "absolute" as const : "relative" as const,

@@ -17,8 +17,8 @@ export default function KarieraPage() {
           </p>
           <p className="font-body text-base md:text-lg text-qd-text-secondary leading-[1.7] max-w-[700px]">
             Jeśli chcesz dołączyć do naszego zespołu, wyślij swoje CV na{" "}
-            <a href="mailto:kariera@quickdoc.pl" className="text-qd-primary hover:underline">
-              kariera@quickdoc.pl
+            <a href="mailto:kariera@doktorteraz.pl" className="text-qd-primary hover:underline">
+              kariera@doktorteraz.pl
             </a>
           </p>
         </div>

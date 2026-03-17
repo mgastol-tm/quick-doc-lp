@@ -11,8 +11,8 @@ import SocialProof from "@/components/SocialProof";
 
 
 export const metadata = {
-  title: "Zwolnienie lekarskie online (L4) — wygodnie i szybko | QuickDoc",
-  description: "Uzyskaj e-zwolnienie lekarskie (e-ZLA) online — wygodnie, szybko i bez kolejek. QuickDoc — lekarz online bez wychodzenia z domu.",
+  title: "Zwolnienie lekarskie online (L4) — wygodnie i szybko | Doktor Teraz",
+  description: "Uzyskaj e-zwolnienie lekarskie (e-ZLA) online — wygodnie, szybko i bez kolejek. Doktor Teraz — lekarz online bez wychodzenia z domu.",
 };
 
 const container = "max-w-[1240px] mx-auto w-full px-5 md:px-10";
@@ -46,7 +46,7 @@ function Hero() {
 
           {/* CTAs */}
           <div className="flex flex-col md:flex-row gap-3 md:gap-4">
-            <a href="/umow-wizyte-l4" className="bg-qd-primary text-white font-heading text-[15px] md:text-base font-semibold px-8 py-3.5 md:py-4 rounded-full flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+            <a href="/zwolnienia-lekarskie-l4-umow-wizyte" className="bg-qd-primary text-white font-heading text-[15px] md:text-base font-semibold px-8 py-3.5 md:py-4 rounded-full flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
               Rozpocznij wizytę <span className="opacity-60">79 zł</span> <ArrowRight className="w-4 h-4 md:w-[18px] md:h-[18px]" />
             </a>
             <a href="#jak-to-dziala" className="bg-white border border-qd-border font-heading text-[15px] md:text-base font-medium px-8 py-3.5 md:py-4 rounded-full text-center text-qd-text hover:bg-gray-50 transition-colors">
@@ -175,7 +175,7 @@ function Benefits() {
       <div className={`${container} flex flex-col items-center gap-8 md:gap-14 py-12 md:py-20`}>
         <div className="flex flex-col items-center gap-3">
           <span className="font-heading text-[11px] md:text-[13px] font-semibold text-qd-primary tracking-[2px]">
-            DLACZEGO QUICKDOC
+            DLACZEGO DOKTOR TERAZ
           </span>
           <h2 className="font-heading text-[26px] md:text-[40px] font-semibold text-white tracking-[-1px] text-center">
             Stworzony na chwile, gdy najbardziej potrzebujesz
@@ -243,7 +243,7 @@ function Pricing() {
           </div>
 
           <div className="px-6 pb-6 md:px-8 md:pb-8">
-            <a href="/umow-wizyte-l4" className="block w-full bg-qd-primary text-white font-heading text-[15px] md:text-base font-semibold py-3.5 md:py-4 rounded-full text-center hover:opacity-90 transition-opacity">
+            <a href="/zwolnienia-lekarskie-l4-umow-wizyte" className="block w-full bg-qd-primary text-white font-heading text-[15px] md:text-base font-semibold py-3.5 md:py-4 rounded-full text-center hover:opacity-90 transition-opacity">
               Rozpocznij wizytę <span className="opacity-60">79 zł</span>
             </a>
           </div>
@@ -327,7 +327,7 @@ function FinalCTA() {
         <p className="font-body text-[15px] md:text-lg text-white/80 text-center">
           Uzyskaj zwolnienie lekarskie online — wygodnie, szybko i bez kolejek.
         </p>
-        <a href="/umow-wizyte-l4" className="bg-white font-heading text-[15px] md:text-base font-semibold text-qd-primary px-7 md:px-8 py-3.5 md:py-4 rounded-full flex items-center gap-2 hover:opacity-90 transition-opacity">
+        <a href="/zwolnienia-lekarskie-l4-umow-wizyte" className="bg-white font-heading text-[15px] md:text-base font-semibold text-qd-primary px-7 md:px-8 py-3.5 md:py-4 rounded-full flex items-center gap-2 hover:opacity-90 transition-opacity">
           Rozpocznij wizytę <span className="opacity-60">79 zł</span> <ArrowRight className="w-4 h-4 md:w-[18px] md:h-[18px] text-qd-primary" />
         </a>
         <p className="font-body text-xs md:text-[13px] text-white/60 text-center">
