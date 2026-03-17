@@ -208,10 +208,10 @@ export default function EmbedCheckout() {
     );
   }
 
-  // Loading + ready states — container is always visible so iframe can render
+  // Loading + ready states
   return (
-    <div className="w-full">
-      {/* Shimmer skeleton - visible while loading, overlays the embed */}
+    <div className="w-full relative">
+      {/* Shimmer skeleton - visible while loading, positioned above embed */}
       {state === "loading" && (
         <div className="flex flex-col gap-4 animate-pulse">
           <div className="h-12 bg-qd-primary/10 rounded-xl" />
@@ -219,14 +219,13 @@ export default function EmbedCheckout() {
           <div className="h-12 bg-qd-primary/10 rounded-xl w-2/3 mx-auto" />
         </div>
       )}
-      {/* Embed container — always in DOM but visually hidden until ready */}
+      {/* Embed container — always in DOM and in layout flow so iframe can render */}
       <div
         id={CONTAINER_ID}
         style={{
           overflow: "hidden",
           opacity: state === "ready" ? 1 : 0,
-          position: state === "loading" ? "absolute" as const : "relative" as const,
-          left: state === "loading" ? "-9999px" : undefined,
+          height: state === "loading" ? 0 : undefined,
           width: "100%",
           transition: "opacity 0.3s ease",
         }}
