@@ -12,7 +12,6 @@ declare global {
 }
 
 const WIDGET_CONTAINER_ID = "find-doctor-widget";
-const CHECKOUT_CONTAINER_ID = "find-doctor-checkout";
 const SCRIPT_URL =
   "https://telemedi.com/pl/lekarze/widget/telemedi-find-doctor-widget.js";
 const LOAD_TIMEOUT_MS = 15_000;
@@ -51,13 +50,12 @@ export default function EmbedFindDoctor() {
       try {
         window.TelemediFindDoctorWidget.mount({
           containerId: WIDGET_CONTAINER_ID,
-          checkoutEmbedTarget: CHECKOUT_CONTAINER_ID,
-          apiHost: "https://telemedi.co",
-          defaultChannel: "phone",
-          utmSource: "quickdoc",
-          utmMedium: "embed",
+          checkoutEmbed: true,
           hideGoOption: true,
           hideNfzOption: true,
+          onCheckoutSuccess: (result: Record<string, unknown>) => {
+            console.log("Booking success:", result.consultationId);
+          },
         });
         mountedRef.current = true;
       } finally {
@@ -151,7 +149,6 @@ export default function EmbedFindDoctor() {
   return (
     <div className="w-full">
       <div id={WIDGET_CONTAINER_ID} style={{ width: "100%" }} />
-      <div id={CHECKOUT_CONTAINER_ID} style={{ width: "100%", marginTop: 16 }} />
     </div>
   );
 }
