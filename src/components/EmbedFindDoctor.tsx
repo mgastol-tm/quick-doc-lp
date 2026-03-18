@@ -50,6 +50,7 @@ export default function EmbedFindDoctor() {
       try {
         window.TelemediFindDoctorWidget.mount({
           containerId: WIDGET_CONTAINER_ID,
+          apiHost: "https://telemedi.co",
           checkoutEmbed: true,
           hideGoOption: true,
           hideNfzOption: true,
