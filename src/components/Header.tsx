@@ -25,7 +25,7 @@ export default function Header() {
             <Plus className="w-[18px] h-[18px] text-white" />
           </div>
           <span className="font-heading text-[22px] font-semibold text-qd-text">
-            Doktor Teraz
+            QuickDoc
           </span>
         </Link>
 

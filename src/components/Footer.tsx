@@ -34,7 +34,7 @@ export default function Footer() {
               <div className="w-6 h-6 md:w-7 md:h-7 bg-qd-primary rounded-md flex items-center justify-center">
                 <Plus className="w-3.5 h-3.5 md:w-4 md:h-4 text-white" />
               </div>
-              <span className="font-heading text-base md:text-lg font-semibold text-white">Doktor Teraz</span>
+              <span className="font-heading text-base md:text-lg font-semibold text-white">QuickDoc</span>
             </Link>
             <p className="font-body text-xs md:text-[13px] text-qd-text-secondary leading-[1.6]">
               Szybkie, legalne konsultacje lekarskie online w celu uzyskania zwolnienia lekarskiego. Dostępne 24/7.
@@ -65,7 +65,7 @@ export default function Footer() {
         <div className="border-t border-qd-dark-border pt-5 flex flex-col items-center gap-2">
           <div className="flex flex-col md:flex-row items-center md:justify-between gap-2 w-full">
             <span className="font-body text-[11px] md:text-xs text-qd-text-secondary">
-              © 2026 Doktor Teraz. Wszelkie prawa zastrzeżone.
+              © 2026 QuickDoc. Wszelkie prawa zastrzeżone.
             </span>
             <span className="font-body text-[11px] md:text-xs text-qd-text-secondary">
               Stworzone z troską o Twoje zdrowie

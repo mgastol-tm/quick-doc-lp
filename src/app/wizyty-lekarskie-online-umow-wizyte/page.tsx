@@ -7,16 +7,16 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FAQL4Accordion from "@/components/FAQL4Accordion";
 import SocialProof from "@/components/SocialProof";
-import EmbedCheckout from "@/components/EmbedCheckout";
+import EmbedFindDoctor from "@/components/EmbedFindDoctor";
 
 export const metadata = {
-  title: "Zwolnienie lekarskie online (L4) — wygodnie i szybko | QuickDoc",
-  description: "Uzyskaj e-zwolnienie lekarskie (e-ZLA) online — wygodnie, szybko i bez kolejek. QuickDoc — lekarz online bez wychodzenia z domu.",
+  title: "Umów wizytę lekarską online — konsultacja ze specjalistą | QuickDoc",
+  description: "Znajdź lekarza specjalistę i umów wizytę online. Internista, pediatra, psychiatra i więcej. Szybko, wygodnie i bez kolejek.",
 };
 
 const container = "max-w-[1240px] mx-auto w-full px-5 md:px-10";
 
-/* ───────── Checkout Embed ───────── */
+/* ───────── Find Doctor + Checkout Embed ───────── */
 function CheckoutSection() {
   return (
     <section className="bg-white">
@@ -26,11 +26,11 @@ function CheckoutSection() {
             UMÓW WIZYTĘ
           </span>
           <h2 className="font-heading text-2xl md:text-[40px] font-semibold text-qd-text tracking-[-0.5px] md:tracking-[-1px] text-center">
-            Umów wizytę online
+            Znajdź lekarza i umów wizytę
           </h2>
         </div>
         <div className="w-full max-w-[720px]">
-          <EmbedCheckout />
+          <EmbedFindDoctor />
         </div>
       </div>
     </section>
@@ -80,9 +80,9 @@ function Partners() {
 
 /* ───────── How It Works ───────── */
 const steps = [
-  { num: "1", icon: Video, title: "Telekonsultacja", desc: "Umów się na wizytę online. Lekarz skontaktuje się z Tobą telefonicznie, przez wideo lub czat — wygodnie, z domu." },
+  { num: "1", icon: Video, title: "Wybierz specjalistę", desc: "Wybierz specjalizację i termin wizyty. Znajdź lekarza, który odpowiada Twoim potrzebom." },
   { num: "2", icon: ClipboardList, title: "Opisz objawy", desc: "Opowiedz lekarzowi o swoich dolegliwościach. Lekarz przeprowadzi wywiad i postawi diagnozę." },
-  { num: "3", icon: FileText, title: "Otrzymaj zalecenia i e-ZLA", desc: "Lekarz przekaże zalecenia medyczne. Jeśli zachodzi potrzeba — wystawi e-zwolnienie (e-ZLA), widoczne od razu na koncie IKP." },
+  { num: "3", icon: FileText, title: "Otrzymaj zalecenia", desc: "Lekarz przekaże zalecenia medyczne, receptę lub e-zwolnienie — w zależności od potrzeb." },
 ];
 
 function HowItWorks() {
@@ -97,7 +97,7 @@ function HowItWorks() {
             Trzy proste kroki do konsultacji
           </h2>
           <p className="font-body text-sm md:text-base text-qd-text-secondary text-center">
-            Bez umawiania wizyt. Cały proces zrealizujesz z telefonu lub laptopa.
+            Bez kolejek. Cały proces zrealizujesz z telefonu lub laptopa.
           </p>
         </div>
 
@@ -122,10 +122,10 @@ function HowItWorks() {
 
 /* ───────── Pricing ───────── */
 const features = [
-  "Wideokonsultacja z lekarzem specjalistą",
-  "Oficjalne elektroniczne zwolnienie lekarskie",
-  "Wysyłka do ZUS i pracodawcy automatycznie",
+  "Konsultacja z lekarzem specjalistą",
+  "Recepty, e-zwolnienia i skierowania",
   "Dostępne 24/7, 365 dni w roku",
+  "Bez kolejek i dojazdów",
 ];
 
 function Pricing() {
@@ -146,10 +146,10 @@ function Pricing() {
           <div className="p-6 md:p-8 pb-5 md:pb-6 border-b border-qd-border flex flex-col gap-2">
             <h3 className="font-heading text-base md:text-lg font-semibold text-qd-text">Konsultacja online</h3>
             <p className="font-body text-[13px] md:text-sm text-qd-text-secondary leading-[1.5]">
-              Konsultacja lekarska z fokusem na zwolnienie lekarskie (e-ZLA).
+              Konsultacja lekarska z wybranym specjalistą — przez telefon, wideo lub czat.
             </p>
             <div className="flex items-end gap-1 mt-1">
-              <span className="font-heading text-[32px] md:text-[40px] font-semibold text-qd-text tracking-[-1px]">79 zł</span>
+              <span className="font-heading text-[32px] md:text-[40px] font-semibold text-qd-text tracking-[-1px]">od 79 zł</span>
               <span className="font-body text-[13px] md:text-sm text-qd-text-secondary pb-1">/ konsultacja</span>
             </div>
           </div>
@@ -165,7 +165,7 @@ function Pricing() {
         </div>
 
         <p className="font-body text-[11px] md:text-xs text-qd-text-secondary text-center max-w-[520px]">
-          Decyzja o wystawieniu zwolnienia lekarskiego zawsze należy do lekarza. Opłata obejmuje konsultację, niezależnie od jej wyniku.
+          Cena zależy od wybranej specjalizacji. Opłata obejmuje konsultację, niezależnie od jej wyniku.
         </p>
       </div>
     </section>
@@ -196,13 +196,13 @@ function FinalCTA() {
     <section className="bg-qd-primary">
       <div className={`${container} flex flex-col items-center gap-6 md:gap-8 py-12 md:py-20`}>
         <h2 className="font-heading text-[26px] md:text-[44px] font-semibold text-white tracking-[-1px] text-center">
-          Źle się czujesz? Nie czekaj.
+          Potrzebujesz konsultacji? Nie czekaj.
         </h2>
         <p className="font-body text-[15px] md:text-lg text-white/80 text-center">
-          Uzyskaj zwolnienie lekarskie online — wygodnie, szybko i bez kolejek.
+          Umów wizytę online z lekarzem specjalistą — wygodnie, szybko i bez kolejek.
         </p>
-        <a href="/zwolnienia-lekarskie-l4-umow-wizyte" className="bg-white font-heading text-[15px] md:text-base font-semibold text-qd-primary px-7 md:px-8 py-3.5 md:py-4 rounded-full flex items-center gap-2 hover:opacity-90 transition-opacity">
-          Rozpocznij wizytę <span className="opacity-60">79 zł</span> <ArrowRight className="w-4 h-4 md:w-[18px] md:h-[18px] text-qd-primary" />
+        <a href="/wizyty-lekarskie-online-umow-wizyte" className="bg-white font-heading text-[15px] md:text-base font-semibold text-qd-primary px-7 md:px-8 py-3.5 md:py-4 rounded-full flex items-center gap-2 hover:opacity-90 transition-opacity">
+          Umów wizytę <ArrowRight className="w-4 h-4 md:w-[18px] md:h-[18px] text-qd-primary" />
         </a>
         <p className="font-body text-xs md:text-[13px] text-white/60 text-center">
           Bez subskrypcji — płacisz tylko wtedy, gdy potrzebujesz
@@ -213,7 +213,7 @@ function FinalCTA() {
 }
 
 /* ───────── Page ───────── */
-export default function ZwolnieniaLekarskieL4() {
+export default function WizytyLekarskieOnline() {
   return (
     <main className="flex flex-col min-h-screen">
       <Header />

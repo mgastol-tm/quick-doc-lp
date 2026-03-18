@@ -248,7 +248,7 @@ function Benefits() {
       <div className={`${container} flex flex-col items-center gap-8 md:gap-14 py-12 md:py-20`}>
         <div className="flex flex-col items-center gap-3">
           <span className="font-heading text-[11px] md:text-[13px] font-semibold text-qd-primary tracking-[2px]">
-            DLACZEGO DOKTOR TERAZ
+            DLACZEGO QUICKDOC
           </span>
           <h2 className="font-heading text-[26px] md:text-[40px] font-semibold text-white tracking-[-1px] text-center">
             Stworzony na chwile, gdy najbardziej potrzebujesz

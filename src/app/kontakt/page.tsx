@@ -18,8 +18,8 @@ export default function KontaktPage() {
           <div className="flex flex-col gap-3 font-body text-base text-qd-text">
             <p>
               <span className="font-semibold">Email:</span>{" "}
-              <a href="mailto:kontakt@doktorteraz.pl" className="text-qd-primary hover:underline">
-                kontakt@doktorteraz.pl
+              <a href="mailto:kontakt@quickdoc.pl" className="text-qd-primary hover:underline">
+                kontakt@quickdoc.pl
               </a>
             </p>
             <p>

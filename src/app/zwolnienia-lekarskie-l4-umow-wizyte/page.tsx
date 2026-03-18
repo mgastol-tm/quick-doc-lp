@@ -10,7 +10,7 @@ import SocialProof from "@/components/SocialProof";
 import EmbedCheckout from "@/components/EmbedCheckout";
 
 export const metadata = {
-  title: "Umów wizytę — zwolnienie lekarskie L4 online | Doktor Teraz",
+  title: "Umów wizytę — zwolnienie lekarskie L4 online | QuickDoc",
   description: "Zarezerwuj konsultację lekarską online i uzyskaj e-zwolnienie (e-ZLA). Szybko, wygodnie i bez kolejek.",
 };
 
