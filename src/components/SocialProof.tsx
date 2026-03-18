@@ -51,8 +51,8 @@ export default function SocialProof() {
         {/* Stats */}
         <div className="flex items-center justify-center w-full max-w-[700px]">
           {[
-            { num: "62 000+", label: "Pacjentów", labelDesktop: "Obsłużonych pacjentów" },
-            { num: "12 min", label: "Śr. czas", labelDesktop: "Średni czas konsultacji", border: true },
+            { num: "40 000+", label: "Pacjentów", labelDesktop: "Pacjentów miesięcznie" },
+            { num: "500+", label: "Lekarzy", labelDesktop: "Lekarzy specjalistów", border: true },
             { num: "4.9/5", label: "Ocena", labelDesktop: "Ocena pacjentów" },
           ].map(({ num, label, labelDesktop, border }) => (
             <div key={num} className={`flex-1 flex flex-col items-center gap-1 py-4 md:py-6 ${border ? "border-x border-qd-border" : ""}`}>

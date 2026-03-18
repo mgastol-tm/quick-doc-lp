@@ -149,6 +149,7 @@ export default function EmbedFindDoctor() {
 
   return (
     <div className="w-full">
+      <style>{`#${WIDGET_CONTAINER_ID} [class*="avg-time"], #${WIDGET_CONTAINER_ID} [class*="avgTime"], #${WIDGET_CONTAINER_ID} [class*="wait-time"], #${WIDGET_CONTAINER_ID} [class*="waitTime"] { display: none !important; }`}</style>
       <div id={WIDGET_CONTAINER_ID} style={{ width: "100%" }} />
     </div>
   );

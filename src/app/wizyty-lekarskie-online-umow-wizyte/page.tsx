@@ -82,7 +82,7 @@ function Partners() {
 const steps = [
   { num: "1", icon: Video, title: "Wybierz specjalistę", desc: "Wybierz specjalizację i termin wizyty. Znajdź lekarza, który odpowiada Twoim potrzebom." },
   { num: "2", icon: ClipboardList, title: "Opisz objawy", desc: "Opowiedz lekarzowi o swoich dolegliwościach. Lekarz przeprowadzi wywiad i postawi diagnozę." },
-  { num: "3", icon: FileText, title: "Otrzymaj zalecenia", desc: "Lekarz przekaże zalecenia medyczne, receptę lub e-zwolnienie — w zależności od potrzeb." },
+  { num: "3", icon: FileText, title: "Otrzymaj zalecenia", desc: "Lekarz przekaże zalecenia medyczne lub e-zwolnienie — w zależności od potrzeb." },
 ];
 
 function HowItWorks() {
@@ -123,7 +123,7 @@ function HowItWorks() {
 /* ───────── Pricing ───────── */
 const features = [
   "Konsultacja z lekarzem specjalistą",
-  "Recepty, e-zwolnienia i skierowania",
+  "E-zwolnienia i dokumenty medyczne",
   "Dostępne 24/7, 365 dni w roku",
   "Bez kolejek i dojazdów",
 ];
