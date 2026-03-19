@@ -10,8 +10,8 @@ import SocialProof from "@/components/SocialProof";
 import EmbedCheckout from "@/components/EmbedCheckout";
 
 export const metadata = {
-  title: "Zwolnienie lekarskie online (L4) — wygodnie i szybko | QuickDoc",
-  description: "Uzyskaj e-zwolnienie lekarskie (e-ZLA) online — wygodnie, szybko i bez kolejek. QuickDoc — lekarz online bez wychodzenia z domu.",
+  title: "Zwolnienie lekarskie online (L4) — wygodnie i szybko | Doktor Teraz",
+  description: "Uzyskaj e-zwolnienie lekarskie (e-ZLA) online — wygodnie, szybko i bez kolejek. Doktor Teraz — lekarz online bez wychodzenia z domu.",
 };
 
 const container = "max-w-[1240px] mx-auto w-full px-5 md:px-10";

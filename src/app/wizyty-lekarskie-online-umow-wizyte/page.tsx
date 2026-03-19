@@ -10,7 +10,7 @@ import SocialProof from "@/components/SocialProof";
 import EmbedFindDoctor from "@/components/EmbedFindDoctor";
 
 export const metadata = {
-  title: "Umów wizytę lekarską online — konsultacja ze specjalistą | QuickDoc",
+  title: "Umów wizytę lekarską online — konsultacja ze specjalistą | Doktor Teraz",
   description: "Znajdź lekarza specjalistę i umów wizytę online. Internista, pediatra, psychiatra i więcej. Szybko, wygodnie i bez kolejek.",
 };
 

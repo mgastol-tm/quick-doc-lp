@@ -15,7 +15,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "QuickDoc — Lekarz online bez wychodzenia z domu",
+  title: "Doktor Teraz — Lekarz online bez wychodzenia z domu",
   description: "Konsultacje medyczne online. Internista, pediatra, psychiatra, konsultacja w sprawie zwolnienia L4. Szybko, wygodnie, bez kolejek.",
 };
 
