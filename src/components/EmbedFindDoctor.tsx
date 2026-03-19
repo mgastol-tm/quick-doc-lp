@@ -51,6 +51,7 @@ export default function EmbedFindDoctor() {
         window.TelemediFindDoctorWidget.mount({
           containerId: WIDGET_CONTAINER_ID,
           apiHost: "https://telemedi.co",
+          detailedSource: `doktorteraz.pl${window.location.pathname}`,
           checkoutEmbed: true,
           hideGoOption: true,
           hideNfzOption: true,
