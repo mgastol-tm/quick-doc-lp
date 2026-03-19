@@ -57,7 +57,7 @@ export default function SocialProof() {
           ].map(({ num, label, labelDesktop, border }) => (
             <div key={num} className={`flex-1 flex flex-col items-center gap-1 py-4 md:py-6 ${border ? "border-x border-qd-border" : ""}`}>
               <span className="font-heading text-[28px] md:text-5xl font-semibold text-qd-primary tracking-[-1px]">{num}</span>
-              <span className="font-body text-[11px] md:text-sm font-medium text-qd-text-secondary">
+              <span className="font-body text-[11px] md:text-sm font-medium text-[#555555]">
                 <span className="md:hidden">{label}</span>
                 <span className="hidden md:inline">{labelDesktop}</span>
               </span>
@@ -108,11 +108,11 @@ function TestimonialCard({ quote, name, initials, stars, date }: { quote: string
       <p className="font-body text-[13px] md:text-sm text-qd-text leading-[1.6] flex-1 line-clamp-4">&ldquo;{quote}&rdquo;</p>
       <div className="flex items-center gap-2.5 md:gap-3 mt-auto">
         <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-qd-primary-light flex items-center justify-center">
-          <span className="font-heading text-xs md:text-sm font-semibold text-qd-primary">{initials}</span>
+          <span className="font-heading text-xs md:text-sm font-semibold text-qd-text">{initials}</span>
         </div>
         <div className="flex flex-col">
           <span className="font-heading text-[13px] md:text-sm font-semibold text-qd-text">{name}</span>
-          <span className="font-body text-[10px] md:text-[11px] text-qd-text-secondary">{date}</span>
+          <span className="font-body text-[11px] md:text-[12px] text-[#555555]">{date}</span>
         </div>
       </div>
     </div>

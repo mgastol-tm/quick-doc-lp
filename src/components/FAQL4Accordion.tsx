@@ -2,38 +2,16 @@
 
 import * as Accordion from "@radix-ui/react-accordion";
 import { ChevronDown } from "lucide-react";
-
-const faqs = [
-  {
-    q: "Czy e-ZLA wystawione online jest prawnie ważne?",
-    a: "Tak, e-zwolnienie (e-ZLA) wystawione po konsultacji z naszym lekarzem jest w pełni prawnie ważne, zgodnie z ustawą z dnia 25 czerwca 1999 r. o świadczeniach pieniężnych z ubezpieczenia społecznego w razie choroby i macierzyństwa. Trafia automatycznie do ZUS i jest akceptowane przez każdego pracodawcę w Polsce.",
-  },
-  {
-    q: "Jak szybko lekarz do mnie zadzwoni?",
-    a: "Zazwyczaj jeszcze w tej samej godzinie, czasem dłużej, ale ogólnie niezwykle sprawnie. Lekarz dzwoni na podany przez Ciebie numer telefonu.",
-  },
-  {
-    q: "Czy pracodawca zaakceptuje zwolnienie wystawione online?",
-    a: "Tak. E-ZLA wystawione po konsultacji online ma taką samą moc prawną jak zwolnienie z tradycyjnej wizyty. Pracodawca otrzymuje je automatycznie przez system ZUS.",
-  },
-  {
-    q: "Co jeśli lekarz uzna, że nie potrzebuję zwolnienia?",
-    a: "Decyzja o wystawieniu zwolnienia zawsze należy do lekarza. Lekarz przeprowadza pełną konsultację medyczną i ocenia zasadność zwolnienia. Jeśli nie stwierdzi podstaw, przekaże Ci zalecenia dotyczące leczenia. Opłata obejmuje samą konsultację, niezależnie od wyniku.",
-  },
-  {
-    q: "Gdzie zobaczę wystawione e-ZLA?",
-    a: "E-zwolnienie jest widoczne od razu na Twoim koncie w Internetowym Koncie Pacjenta (IKP) na pacjent.gov.pl. Zostaje też automatycznie przesłane do ZUS.",
-  },
-];
+import { faqItems } from "@/data/faq-l4";
 
 export default function FAQL4Accordion() {
   return (
     <Accordion.Root type="single" collapsible className="w-full flex flex-col">
-      {faqs.map(({ q, a }, i) => (
+      {faqItems.map(({ q, a }, i) => (
         <Accordion.Item
           key={q}
           value={`item-${i}`}
-          className={i < faqs.length - 1 ? "border-b border-qd-border" : ""}
+          className={i < faqItems.length - 1 ? "border-b border-qd-border" : ""}
         >
           <Accordion.Header>
             <Accordion.Trigger className="flex items-center justify-between py-4 md:py-5 gap-4 w-full text-left group">

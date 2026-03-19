@@ -36,7 +36,7 @@ export default function Footer() {
               </div>
               <span className="font-heading text-base md:text-lg font-semibold text-white">Doktor Teraz</span>
             </Link>
-            <p className="font-body text-xs md:text-[13px] text-qd-text-secondary leading-[1.6]">
+            <p className="font-body text-xs md:text-[13px] text-[#9A9A9A] leading-[1.6]">
               Szybkie, legalne konsultacje lekarskie online w celu uzyskania zwolnienia lekarskiego. Dostępne 24/7.
             </p>
           </div>
@@ -48,7 +48,7 @@ export default function Footer() {
                 <span className="font-heading text-xs md:text-[13px] font-semibold text-white">{title}</span>
                 {links.map((link) => {
                   const href = linkHrefs[link];
-                  const cls = "font-body text-xs md:text-[13px] text-qd-text-secondary hover:text-white transition-colors";
+                  const cls = "font-body text-xs md:text-[13px] text-[#9A9A9A] hover:text-white transition-colors";
                   if (!href) {
                     return <a key={link} href="#" className={cls}>{link}</a>;
                   }
@@ -64,14 +64,14 @@ export default function Footer() {
 
         <div className="border-t border-qd-dark-border pt-5 flex flex-col items-center gap-2">
           <div className="flex flex-col md:flex-row items-center md:justify-between gap-2 w-full">
-            <span className="font-body text-[11px] md:text-xs text-qd-text-secondary">
+            <span className="font-body text-[11px] md:text-xs text-[#9A9A9A]">
               © 2026 Doktor Teraz. Wszelkie prawa zastrzeżone.
             </span>
-            <span className="font-body text-[11px] md:text-xs text-qd-text-secondary">
+            <span className="font-body text-[11px] md:text-xs text-[#9A9A9A]">
               Stworzone z troską o Twoje zdrowie
             </span>
           </div>
-          <a href="https://pngtree.com" target="_blank" rel="noopener noreferrer" className="font-body text-[10px] text-qd-text-secondary opacity-40 hover:opacity-60 transition-opacity">
+          <a href="https://pngtree.com" target="_blank" rel="noopener noreferrer" className="font-body text-[10px] text-[#7A7A7A] hover:text-[#999999] transition-colors">
             png image from pngtree.com
           </a>
         </div>
