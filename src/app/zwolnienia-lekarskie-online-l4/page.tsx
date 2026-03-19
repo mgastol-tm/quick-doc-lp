@@ -206,7 +206,7 @@ function Benefits() {
     <section id="korzysci" className="bg-qd-dark scroll-mt-[72px]">
       <div className={`${container} flex flex-col items-center gap-8 md:gap-14 py-12 md:py-20`}>
         <div className="flex flex-col items-center gap-3">
-          <span className="font-heading text-[11px] md:text-[13px] font-semibold text-[#07704D] tracking-[2px]">
+          <span className="font-heading text-[11px] md:text-[13px] font-semibold text-[#4ADE80] tracking-[2px]">
             DLACZEGO DOKTOR TERAZ
           </span>
           <h2 className="font-heading text-[26px] md:text-[40px] font-semibold text-white tracking-[-1px] text-center">
@@ -333,7 +333,7 @@ function Pricing() {
           </div>
 
           <div className="px-6 pb-6 md:px-8 md:pb-8">
-            <a href="/zwolnienia-lekarskie-online-l4/umow-wizyte" className="block w-full bg-qd-primary text-white font-heading text-[15px] md:text-base font-semibold py-3.5 md:py-4 rounded-full text-center hover:opacity-90 transition-opacity">
+            <a href="/zwolnienia-lekarskie-online-l4/umow-wizyte" className="block w-full bg-[#0A7D55] text-white font-heading text-[15px] md:text-base font-semibold py-3.5 md:py-4 rounded-full text-center hover:opacity-90 transition-opacity">
               Rozpocznij wizytę <span className="text-white">79 zł</span>
             </a>
           </div>
@@ -409,7 +409,7 @@ function FAQ() {
 /* ───────── Final CTA ───────── */
 function FinalCTA() {
   return (
-    <section className="bg-qd-primary">
+    <section className="bg-[#0A7D55]">
       <div className={`${container} flex flex-col items-center gap-6 md:gap-8 py-12 md:py-20`}>
         <h2 className="font-heading text-[26px] md:text-[44px] font-semibold text-white tracking-[-1px] text-center">
           Źle się czujesz? Nie czekaj.
@@ -417,8 +417,8 @@ function FinalCTA() {
         <p className="font-body text-[15px] md:text-lg text-white text-center">
           Uzyskaj zwolnienie lekarskie online — wygodnie, szybko i bez kolejek.
         </p>
-        <a href="/zwolnienia-lekarskie-online-l4/umow-wizyte" className="bg-white font-heading text-[15px] md:text-base font-semibold text-qd-primary px-7 md:px-8 py-3.5 md:py-4 rounded-full flex items-center gap-2 hover:opacity-90 transition-opacity">
-          Rozpocznij wizytę <span className="text-qd-primary">79 zł</span> <ArrowRight className="w-4 h-4 md:w-[18px] md:h-[18px] text-qd-primary" />
+        <a href="/zwolnienia-lekarskie-online-l4/umow-wizyte" className="bg-white font-heading text-[15px] md:text-base font-semibold text-[#0A7D55] px-7 md:px-8 py-3.5 md:py-4 rounded-full flex items-center gap-2 hover:opacity-90 transition-opacity">
+          Rozpocznij wizytę <span className="text-[#0A7D55]">79 zł</span> <ArrowRight className="w-4 h-4 md:w-[18px] md:h-[18px] text-[#0A7D55]" />
         </a>
         <p className="font-body text-xs md:text-[13px] text-white text-center">
           Bez subskrypcji — płacisz tylko wtedy, gdy potrzebujesz
