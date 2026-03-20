@@ -16,7 +16,6 @@ interface TelemediMountConfig {
   mode: string;
   channel: string;
   source: string;
-  detailedSource: string;
   hideHeader: boolean;
   hideGoOption: boolean;
   onSuccess?: (result: { consultationId: string; surveyUrl?: string }) => void;
