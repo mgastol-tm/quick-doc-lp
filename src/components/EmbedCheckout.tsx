@@ -71,8 +71,7 @@ export default function EmbedCheckout() {
           containerId: CONTAINER_ID,
           mode: "sickLeave",
           channel: "phone",
-          source: "quickdoc",
-          detailedSource: `doktorteraz.pl${window.location.pathname}`,
+          source: `doktorteraz.pl${window.location.pathname}`,
           hideHeader: true,
           hideGoOption: true,
           onSuccess: (result) => {
