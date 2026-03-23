@@ -14,13 +14,14 @@ declare global {
 interface TelemediMountConfig {
   containerId: string;
   mode: string;
-  channel: string;
+  channel?: string;
   source: string;
   hideHeader: boolean;
-  hideGoOption: boolean;
+  hideGoOption?: boolean;
   onSuccess?: (result: { consultationId: string; surveyUrl?: string }) => void;
   onError?: (error: { message: string }) => void;
   onHeightChange?: (height: number) => void;
+  onPaymentRedirect?: (url: string) => void;
 }
 
 const CONTAINER_ID = "checkout-embed";
@@ -57,6 +58,38 @@ export default function EmbedCheckout() {
             modified = true;
           }
         }
+        // Forward GA4 client_id from _ga cookie for server-side conversion attribution
+        const gaCookie = document.cookie.match(/(^| )_ga=([^;]+)/)?.[2];
+        if (gaCookie && !params.has("cid")) {
+          const cid = gaCookie.split(".").slice(2).join(".");
+          if (cid) {
+            params.set("cid", cid);
+            modified = true;
+          }
+        }
+
+        // Forward GA4 session_id from _ga_<ID> cookie
+        const gaSessionCookie = document.cookie.match(/(^| )_ga_[A-Z0-9]+=([^;]+)/)?.[2];
+        if (gaSessionCookie && !params.has("session_id")) {
+          const parts = gaSessionCookie.split(".");
+          if (parts.length >= 3) {
+            params.set("session_id", parts[2]);
+            modified = true;
+          }
+        }
+
+        // Forward Meta _fbp and _fbc cookies for CAPI attribution
+        const fbpCookie = document.cookie.match(/(^| )_fbp=([^;]+)/)?.[2];
+        if (fbpCookie && !params.has("_fbp")) {
+          params.set("_fbp", fbpCookie);
+          modified = true;
+        }
+        const fbcCookie = document.cookie.match(/(^| )_fbc=([^;]+)/)?.[2];
+        if (fbcCookie && !params.has("_fbc")) {
+          params.set("_fbc", fbcCookie);
+          modified = true;
+        }
+
         if (modified) {
           const newUrl = `${window.location.pathname}?${params.toString()}${window.location.hash}`;
           window.history.replaceState(null, "", newUrl);
