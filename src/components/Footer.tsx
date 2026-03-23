@@ -12,8 +12,8 @@ const linkHrefs: Record<string, string> = {
   "FAQ": "/#faq",
   "Konsultacje telemedyczne": "https://telemedi.com/pl/konsultacje-telemedyczne-czat-online-teleporady/",
   "Zwolnienie (L4) online": "https://telemedi.com/pl/zwolnienie-online-l4-przez-internet/",
-  "Polityka prywatności": "https://telemedi.com/pl/privacy-policy/",
-  "Regulamin": "https://telemedi.com/pl/terms-and-conditions/",
+  "Polityka prywatności": "/polityka-prywatnosci.pdf",
+  "Regulamin": "/regulamin.pdf",
   "Regulamin organizacyjny": "https://telemedi.com/pl/regulamin-organizacyjny/",
 };
 
@@ -52,7 +52,7 @@ export default function Footer() {
                   if (!href) {
                     return <a key={link} href="#" className={cls}>{link}</a>;
                   }
-                  if (href.startsWith("http")) {
+                  if (href.startsWith("http") || href.endsWith(".pdf")) {
                     return <a key={link} href={href} target="_blank" rel="noopener noreferrer" className={cls}>{link}</a>;
                   }
                   return <Link key={link} href={href} className={cls}>{link}</Link>;

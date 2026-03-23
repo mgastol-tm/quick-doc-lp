@@ -47,6 +47,8 @@ export default function EmbedCheckoutStandalone() {
           hideHeader: true,
           hideGoOption: true,
           blikEnabled: false,
+          termsUrl: "https://doktorteraz.pl/regulamin.pdf",
+          privacyPolicyUrl: "https://doktorteraz.pl/polityka-prywatnosci.pdf",
           onSuccess: (result) => {
             console.log("Checkout success:", result);
           },
