@@ -18,14 +18,14 @@ export default function HeaderV2() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="absolute top-0 left-0 right-0 z-50">
+    <header className={`absolute top-0 left-0 right-0 z-50 transition-colors ${open ? "bg-black/60 backdrop-blur-xl" : ""}`}>
       <div className={`${container} flex items-center justify-between h-[72px]`}>
         <Link href="/" className="flex items-center gap-2.5">
           <div className="w-8 h-8 bg-white/20 backdrop-blur-md rounded-lg flex items-center justify-center border border-white/25">
             <Plus className="w-[18px] h-[18px] text-white" />
           </div>
-          <span className="font-heading text-[22px] font-semibold text-white drop-shadow-sm">
-            Doktor Teraz
+          <span className="font-heading text-[22px] text-white drop-shadow-sm">
+            <span className="font-light">Doktor</span> <span className="font-bold">Teraz</span>
           </span>
         </Link>
 
@@ -49,7 +49,7 @@ export default function HeaderV2() {
 
       {/* Mobile menu */}
       {open && (
-        <nav className="md:hidden bg-black/30 backdrop-blur-xl border-t border-white/10">
+        <nav className="md:hidden border-t border-white/10">
           <div className={`${container} flex flex-col gap-1 py-4`}>
             {navItems.map((item) => (
               <Link

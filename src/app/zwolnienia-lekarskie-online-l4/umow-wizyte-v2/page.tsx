@@ -82,7 +82,7 @@ function Hero() {
 
         {/* Left content — centered vertically on the sticky background */}
         <div className="relative z-10 flex items-center lg:h-screen">
-          <div className="max-w-[1240px] mx-auto w-full px-5 md:px-10 py-12 lg:py-0">
+          <div className="max-w-[1240px] mx-auto w-full px-5 md:px-10 pt-24 pb-12 lg:py-0">
             <div className="flex flex-col gap-6 lg:gap-8 lg:max-w-[55%]">
               {/* Badge */}
               <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md border border-white/25 rounded-full px-4 py-1.5 w-fit">
@@ -97,21 +97,21 @@ function Hero() {
               </h1>
 
               <p className="font-body text-base md:text-lg text-white/80 leading-relaxed max-w-xl">
-                Szybki dostęp do opieki medycznej bez wychodzenia z domu. Otrzymaj e-ZLA w <strong className="font-semibold text-white">15 minut</strong> od profesjonalnych lekarzy.
+                Szybki dostęp do opieki medycznej bez wychodzenia z domu. Otrzymaj e-ZLA nawet <strong className="font-semibold text-white">15 minut</strong> od lekarza pierwszego kontaktu.
               </p>
 
               <div className="w-16 h-[1px] bg-white/30" />
 
               {/* Stats ribbon */}
-              <div className="flex flex-wrap gap-8 md:gap-12 pt-2">
+              <div className="grid grid-cols-3 gap-4 md:flex md:flex-wrap md:gap-12 pt-2">
                 {[
-                  { value: "15min", label: "Czas oczekiwania" },
-                  { value: "24/7", label: "Dostępność serwisu" },
-                  { value: "100%", label: "Ważność dokumentów" },
+                  { value: "15min", label: "Śr. czas konsultacji" },
+                  { value: "24/7", label: "Dostępność" },
+                  { value: "4.9/5", label: "Ocena pacjentów" },
                 ].map(({ value, label }) => (
                   <div key={value} className="flex flex-col">
-                    <span className="font-heading text-2xl md:text-3xl font-bold text-[#95f6c5]">{value}</span>
-                    <span className="font-body text-[10px] md:text-xs text-white/50 font-medium uppercase tracking-widest">{label}</span>
+                    <span className="font-heading text-xl md:text-3xl font-bold text-[#95f6c5]">{value}</span>
+                    <span className="font-body text-[9px] md:text-xs text-white/50 font-medium uppercase tracking-widest">{label}</span>
                   </div>
                 ))}
               </div>
@@ -127,7 +127,7 @@ function Hero() {
           <div className="lg:ml-auto lg:w-[560px] lg:pt-[calc(50vh-300px)] lg:pb-16 lg:pointer-events-auto">
             <div className="w-full">
               <div className="relative">
-                <div className="absolute -top-4 -right-3 lg:-right-5 z-10 bg-[#95f6c5] text-black font-heading font-bold text-xl px-6 py-3 rounded-2xl shadow-lg shadow-[#95f6c5]/30 rotate-3">
+                <div className="absolute -top-4 right-2 lg:right-3 z-10 bg-[#95f6c5] text-black font-heading font-bold text-xl px-6 py-3 rounded-2xl shadow-lg shadow-[#95f6c5]/30 rotate-3">
                   79 zł
                 </div>
                 <div className="glass-card lg:rounded-[2rem] rounded-none border-y lg:border border-white/50 clinical-shadow p-0 md:p-8 overflow-hidden">

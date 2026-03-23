@@ -146,7 +146,7 @@ export default function EmbedCheckoutStandalone() {
   }
 
   return (
-    <div className="w-full relative">
+    <div className="w-full relative bg-white rounded-[10px] overflow-hidden">
       {loading && (
         <div className="flex flex-col gap-4 p-5 md:p-6 animate-pulse">
           <div className="h-6 bg-gray-200 rounded-lg w-3/4" />
