@@ -22,6 +22,7 @@ interface TelemediMountConfig {
   onError?: (error: { message: string }) => void;
   onHeightChange?: (height: number) => void;
   onPaymentRedirect?: (url: string) => void;
+  blikEnabled?: boolean;
 }
 
 const CONTAINER_ID = "checkout-embed";
