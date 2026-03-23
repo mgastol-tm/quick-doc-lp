@@ -39,7 +39,12 @@ As a **visitor**, I want to **complete an L4 sick leave booking using a fast, na
   - Desktop: form in white card with border and padding
   - JSON-LD structured data (FAQ, MedicalBusiness, Breadcrumb)
 
-- [x] Task 3: Fix `blikEnabled` forwarding in workspace-fe
+- [x] Task 3: UX polish
+  - Changed mobile trust row label from "Lekarze" to "Specjaliści"
+  - Removed `overflow-x-hidden` from `<main>` to fix sticky hero text on desktop
+  - Left column (badge, heading, description, trust row) now sticks while scrolling through the checkout form
+
+- [x] Task 4: Fix `blikEnabled` forwarding in workspace-fe
   - Added `blikEnabled` to `CheckoutMountConfig` interface
   - Forwarded `blikEnabled` from mount config to `setApiConfig()` call
   - Rebuilt standalone widget bundle

@@ -87,7 +87,7 @@ function Hero() {
           {/* Trust row */}
           <div className="flex items-center justify-center md:justify-start gap-4 md:gap-6">
             {[
-              { icon: ShieldCheck, text: "Lekarze", textDesktop: "Lekarze specjaliści" },
+              { icon: ShieldCheck, text: "Specjaliści", textDesktop: "Lekarze specjaliści" },
               { icon: Clock4, text: "Szybko", textDesktop: "Szybko i wygodnie" },
               { icon: FileCheck, text: "e-ZLA", textDesktop: "Ważne e-ZLA (L4)" },
             ].map(({ icon: Icon, text, textDesktop }) => (
@@ -431,7 +431,7 @@ function FinalCTA() {
 export default function UmowWizyteL4Standalone() {
   return (
     <>
-      <main className="flex flex-col min-h-screen overflow-x-hidden">
+      <main className="flex flex-col min-h-screen">
         <Header />
         <Hero />
         <Partners />
