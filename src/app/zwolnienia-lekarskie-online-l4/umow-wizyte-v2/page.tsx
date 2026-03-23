@@ -13,9 +13,11 @@ import EmbedCheckoutStandalone from "@/components/EmbedCheckoutStandalone";
 import { faqItems } from "@/data/faq-l4";
 
 export const metadata = {
-  title: "Umów wizytę — zwolnienie lekarskie online (L4) | Doktor Teraz",
-  description: "Umów wizytę online i uzyskaj e-zwolnienie lekarskie (e-ZLA). Szybko, wygodnie i bez kolejek. Doktor Teraz — lekarz online.",
-  robots: { index: false, follow: true },
+  title: "Zwolnienie lekarskie online (L4) — lekarz w 1 godzinę | Doktor Teraz",
+  description: "Zwolnienie lekarskie online (e-ZLA) od 79 zł. Lekarz w ciągu godziny — legalnie, 24/7. Ponad 500 specjalistów, 4.9/5 ocena. Doktor Teraz.",
+  alternates: {
+    canonical: "https://doktorteraz.pl/zwolnienia-lekarskie-online-l4",
+  },
 };
 
 const container = "max-w-[1240px] mx-auto w-full px-5 md:px-10";
@@ -58,7 +60,6 @@ const breadcrumbSchema = {
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Strona główna", item: "https://doktorteraz.pl" },
     { "@type": "ListItem", position: 2, name: "Zwolnienie lekarskie online (L4)", item: "https://doktorteraz.pl/zwolnienia-lekarskie-online-l4" },
-    { "@type": "ListItem", position: 3, name: "Umów wizytę", item: "https://doktorteraz.pl/zwolnienia-lekarskie-online-l4/umow-wizyte-v2" },
   ],
 };
 
@@ -359,7 +360,7 @@ function Pricing() {
           </div>
 
           <div className="px-6 pb-6 md:px-8 md:pb-8">
-            <a href="/zwolnienia-lekarskie-online-l4/umow-wizyte-v2#top" className="block w-full bg-[#0A7D55] text-white font-heading text-[15px] md:text-base font-semibold py-3.5 md:py-4 rounded-full text-center hover:opacity-90 transition-opacity">
+            <a href="/zwolnienia-lekarskie-online-l4#top" className="block w-full bg-[#0A7D55] text-white font-heading text-[15px] md:text-base font-semibold py-3.5 md:py-4 rounded-full text-center hover:opacity-90 transition-opacity">
               Rozpocznij wizytę <span className="text-white">79 zł</span>
             </a>
           </div>
@@ -443,7 +444,7 @@ function FinalCTA() {
         <p className="font-body text-[15px] md:text-lg text-white text-center">
           Uzyskaj zwolnienie lekarskie online — wygodnie, szybko i bez kolejek.
         </p>
-        <a href="/zwolnienia-lekarskie-online-l4/umow-wizyte-v2#top" className="bg-white font-heading text-[15px] md:text-base font-semibold text-[#0A7D55] px-7 md:px-8 py-3.5 md:py-4 rounded-full flex items-center gap-2 hover:opacity-90 transition-opacity">
+        <a href="/zwolnienia-lekarskie-online-l4#top" className="bg-white font-heading text-[15px] md:text-base font-semibold text-[#0A7D55] px-7 md:px-8 py-3.5 md:py-4 rounded-full flex items-center gap-2 hover:opacity-90 transition-opacity">
           Rozpocznij wizytę <span className="text-[#0A7D55]">79 zł</span> <ArrowRight className="w-4 h-4 md:w-[18px] md:h-[18px] text-[#0A7D55]" />
         </a>
         <p className="font-body text-xs md:text-[13px] text-white text-center">

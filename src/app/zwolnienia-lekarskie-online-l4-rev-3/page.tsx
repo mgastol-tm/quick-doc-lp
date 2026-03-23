@@ -5,24 +5,22 @@ import {
   BookOpen, Building2, Globe, CalendarDays,
 } from "lucide-react";
 import Image from "next/image";
-import HeaderV2 from "@/components/HeaderV2";
+import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FAQL4Accordion from "@/components/FAQL4Accordion";
 import SocialProof from "@/components/SocialProof";
-import EmbedCheckoutStandalone from "@/components/EmbedCheckoutStandalone";
+import EmbedCheckout from "@/components/EmbedCheckout";
 import { faqItems } from "@/data/faq-l4";
 
 export const metadata = {
   title: "Zwolnienie lekarskie online (L4) — lekarz w 1 godzinę | Doktor Teraz",
   description: "Zwolnienie lekarskie online (e-ZLA) od 79 zł. Lekarz w ciągu godziny — legalnie, 24/7. Ponad 500 specjalistów, 4.9/5 ocena. Doktor Teraz.",
-  alternates: {
-    canonical: "https://doktorteraz.pl/zwolnienia-lekarskie-online-l4",
-  },
+  robots: { index: false, follow: true },
 };
 
 const container = "max-w-[1240px] mx-auto w-full px-5 md:px-10";
 
-/* ───────── JSON-LD ───────── */
+/* ───────── JSON-LD Structured Data ───────── */
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -63,79 +61,50 @@ const breadcrumbSchema = {
   ],
 };
 
-/* ───────── V2 Hero with Photo Background ───────── */
+/* ───────── Hero ───────── */
 function Hero() {
   return (
-    <section className="relative">
-      {/* Background image — sticky so it stays visible while form scrolls */}
-      <div className="lg:sticky lg:top-0 lg:h-screen relative">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/hero-doctors-bg.jpg"
-            alt=""
-            fill
-            className="object-cover object-top"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0077a8]/85 via-[#0891b2]/65 to-[#0891b2]/30 lg:to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0077a8]/45 via-transparent to-[#0891b2]/15" />
-        </div>
+    <section className="bg-qd-section-green">
+      <div className={`${container} flex flex-col md:flex-row items-start gap-7 md:gap-[60px] py-10 md:py-20`}>
+        <div className="flex flex-col gap-7 md:gap-8 flex-1 md:sticky md:top-24">
+          {/* Badge */}
+          <div className="flex items-center gap-1.5 md:gap-2 bg-qd-primary-light border border-[#0B8A5E33] rounded-full px-3 md:px-3.5 py-[5px] md:py-1.5 w-fit">
+            <span className="w-[6px] h-[6px] md:w-2 md:h-2 rounded-full bg-qd-primary" />
+            <span className="font-body text-[11px] md:text-[13px] font-medium text-[#066B48]">
+              Dostępne 24/7 — Bez kolejek
+            </span>
+          </div>
 
-        {/* Left content — centered vertically on the sticky background */}
-        <div className="relative z-10 flex items-center lg:h-screen">
-          <div className="max-w-[1240px] mx-auto w-full px-5 md:px-10 pt-24 pb-12 lg:py-0">
-            <div className="flex flex-col gap-6 lg:gap-8 lg:max-w-[55%]">
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md border border-white/25 rounded-full px-4 py-1.5 w-fit">
-                <span className="w-2 h-2 rounded-full bg-[#95f6c5] animate-pulse" />
-                <span className="font-body text-xs font-bold text-white/90 tracking-wider uppercase">
-                  Dostępni lekarze online
+          <h1 className="font-heading text-[32px] md:text-[52px] font-semibold text-qd-text tracking-[-0.5px] md:tracking-[-1px] leading-[1.1] md:leading-[1.05] max-w-[580px]">
+            Konsultacja ze zwolnieniem lekarskim L4 online
+          </h1>
+
+          <p className="font-body text-[15px] md:text-lg text-[#555555] leading-[1.5] md:leading-[1.6] max-w-[520px]">
+            Skonsultuj się z lekarzem online i uzyskaj e-zwolnienie lekarskie (e-ZLA) <strong className="font-semibold text-qd-text underline decoration-qd-primary decoration-2 underline-offset-4">nawet w 15 minut</strong>. Legalnie, bez kolejek, z domu.
+          </p>
+
+          {/* Trust row */}
+          <div className="flex items-center justify-center md:justify-start gap-4 md:gap-6">
+            {[
+              { icon: ShieldCheck, text: "Lekarze", textDesktop: "Lekarze specjaliści" },
+              { icon: Clock4, text: "Szybko", textDesktop: "Szybko i wygodnie" },
+              { icon: FileCheck, text: "e-ZLA", textDesktop: "Ważne e-ZLA (L4)" },
+            ].map(({ icon: Icon, text, textDesktop }) => (
+              <div key={text} className="flex items-center gap-1 md:gap-1.5">
+                <Icon className="w-3.5 h-3.5 md:w-4 md:h-4 text-qd-primary" />
+                <span className="font-body text-[11px] md:text-[13px] font-medium text-[#555555]">
+                  <span className="md:hidden">{text}</span>
+                  <span className="hidden md:inline">{textDesktop}</span>
                 </span>
               </div>
-
-              <h1 className="font-heading text-[36px] md:text-[52px] lg:text-[64px] font-bold text-white tracking-tight leading-[1.08] drop-shadow-sm">
-                Konsultacja ze <span className="text-[#95f6c5] italic">zwolnieniem</span> lekarskim L4 online
-              </h1>
-
-              <p className="font-body text-base md:text-lg text-white/80 leading-relaxed max-w-xl">
-                Szybki dostęp do opieki medycznej bez wychodzenia z domu. Otrzymaj e-ZLA nawet <strong className="font-semibold text-white">15 minut</strong> od lekarza pierwszego kontaktu.
-              </p>
-
-              <div className="w-16 h-[1px] bg-white/30" />
-
-              {/* Stats ribbon */}
-              <div className="grid grid-cols-3 gap-4 md:flex md:flex-wrap md:gap-12 pt-2">
-                {[
-                  { value: "15min", label: "Śr. czas konsultacji" },
-                  { value: "24/7", label: "Dostępność" },
-                  { value: "4.9/5", label: "Ocena pacjentów" },
-                ].map(({ value, label }) => (
-                  <div key={value} className="flex flex-col">
-                    <span className="font-heading text-xl md:text-3xl font-bold text-[#95f6c5]">{value}</span>
-                    <span className="font-body text-[9px] md:text-xs text-white/50 font-medium uppercase tracking-widest">{label}</span>
-                  </div>
-                ))}
-              </div>
-
-            </div>
+            ))}
           </div>
         </div>
-      </div>
 
-      {/* Form — overlaps the sticky background on desktop, scrolls naturally */}
-      <div className="relative z-20 lg:-mt-[100vh] lg:ml-auto lg:pointer-events-none">
-        <div className="max-w-[1240px] mx-auto w-full px-0 lg:px-10">
-          <div className="lg:ml-auto lg:w-[560px] lg:pt-[calc(50vh-300px)] lg:pb-16 lg:pointer-events-auto">
-            <div className="w-full">
-              <div className="relative">
-                <div className="absolute -top-4 right-2 lg:right-3 z-10 bg-[#95f6c5] text-black font-heading font-bold text-xl px-6 py-3 rounded-2xl shadow-lg shadow-[#95f6c5]/30 rotate-3">
-                  79 zł
-                </div>
-                <div className="glass-card lg:rounded-[2rem] rounded-none border-y lg:border border-white/50 clinical-shadow p-0 md:p-8 overflow-hidden">
-                  <EmbedCheckoutStandalone />
-                </div>
-              </div>
-            </div>
+        {/* Checkout form */}
+        <div className="w-full md:w-[600px] shrink-0">
+          <div className="bg-white rounded-2xl border border-qd-border p-5 md:p-6 shadow-sm overflow-hidden">
+            <EmbedCheckout />
           </div>
         </div>
       </div>
@@ -143,7 +112,7 @@ function Hero() {
   );
 }
 
-/* ───────── How It Works (from L4 page) ───────── */
+/* ───────── How It Works ───────── */
 const steps = [
   { num: "1", icon: Video, title: "Telekonsultacja", desc: "Umów się na wizytę online. Lekarz skontaktuje się z Tobą telefonicznie, przez wideo lub czat — wygodnie, z domu." },
   { num: "2", icon: ClipboardList, title: "Opisz objawy", desc: "Opowiedz lekarzowi o swoich dolegliwościach. Lekarz przeprowadzi wywiad i postawi diagnozę." },
@@ -275,6 +244,7 @@ function EZLAExplainer() {
         </div>
 
         <div className="flex flex-col md:flex-row gap-8 md:gap-14">
+          {/* Text content */}
           <div className="flex-1 flex flex-col gap-5">
             <p className="font-body text-sm md:text-base text-qd-text leading-[1.7]">
               E-zwolnienie lekarskie (e-ZLA) to elektroniczna forma zwolnienia lekarskiego, która od 2018 roku całkowicie zastąpiła papierowe druki. Lekarz wystawia e-ZLA w systemie informatycznym, a dokument automatycznie trafia do ZUS oraz do pracodawcy przez platformę PUE ZUS / ePłatnik. Pacjent nie musi dostarczać żadnych papierów.
@@ -287,6 +257,7 @@ function EZLAExplainer() {
             </p>
           </div>
 
+          {/* Key facts card */}
           <div className="md:w-[380px] shrink-0">
             <div className="bg-qd-section-light border border-qd-border rounded-2xl p-6 md:p-8 flex flex-col gap-5">
               <h3 className="font-heading text-base md:text-lg font-semibold text-qd-text">Najważniejsze fakty</h3>
@@ -360,7 +331,7 @@ function Pricing() {
           </div>
 
           <div className="px-6 pb-6 md:px-8 md:pb-8">
-            <a href="/zwolnienia-lekarskie-online-l4#top" className="block w-full bg-[#0A7D55] text-white font-heading text-[15px] md:text-base font-semibold py-3.5 md:py-4 rounded-full text-center hover:opacity-90 transition-opacity">
+            <a href="/zwolnienia-lekarskie-online-l4/umow-wizyte" className="block w-full bg-[#0A7D55] text-white font-heading text-[15px] md:text-base font-semibold py-3.5 md:py-4 rounded-full text-center hover:opacity-90 transition-opacity">
               Rozpocznij wizytę <span className="text-white">79 zł</span>
             </a>
           </div>
@@ -444,7 +415,7 @@ function FinalCTA() {
         <p className="font-body text-[15px] md:text-lg text-white text-center">
           Uzyskaj zwolnienie lekarskie online — wygodnie, szybko i bez kolejek.
         </p>
-        <a href="/zwolnienia-lekarskie-online-l4#top" className="bg-white font-heading text-[15px] md:text-base font-semibold text-[#0A7D55] px-7 md:px-8 py-3.5 md:py-4 rounded-full flex items-center gap-2 hover:opacity-90 transition-opacity">
+        <a href="/zwolnienia-lekarskie-online-l4/umow-wizyte" className="bg-white font-heading text-[15px] md:text-base font-semibold text-[#0A7D55] px-7 md:px-8 py-3.5 md:py-4 rounded-full flex items-center gap-2 hover:opacity-90 transition-opacity">
           Rozpocznij wizytę <span className="text-[#0A7D55]">79 zł</span> <ArrowRight className="w-4 h-4 md:w-[18px] md:h-[18px] text-[#0A7D55]" />
         </a>
         <p className="font-body text-xs md:text-[13px] text-white text-center">
@@ -456,11 +427,11 @@ function FinalCTA() {
 }
 
 /* ───────── Page ───────── */
-export default function UmowWizyteL4V2() {
+export default function ZwolnieniaLekarskieL4() {
   return (
     <>
-      <main id="top" className="flex flex-col min-h-screen">
-        <HeaderV2 />
+      <main className="flex flex-col min-h-screen overflow-x-hidden">
+        <Header />
         <Hero />
         <Partners />
         <SocialProof />
@@ -474,9 +445,19 @@ export default function UmowWizyteL4V2() {
         <Footer />
       </main>
 
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(medicalBusinessSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(medicalBusinessSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
     </>
   );
 }
