@@ -100,6 +100,12 @@ function Hero() {
               </div>
             ))}
           </div>
+
+          <div className="flex justify-center">
+            <div className="bg-[#FFF3CD] border border-[#FFD54F] rounded-full px-4 md:px-5 py-2 md:py-2.5">
+              <span className="font-body text-[13px] md:text-[15px] text-[#7A6100]">Jedyne <strong className="font-semibold text-[#5C4900]">79 zł</strong></span>
+            </div>
+          </div>
         </div>
 
         {/* Checkout form */}
