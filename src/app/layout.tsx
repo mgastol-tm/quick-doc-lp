@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Inter } from "next/font/google";
+import { Space_Grotesk, Inter, Atkinson_Hyperlegible_Next } from "next/font/google";
 import OpenReplayTracker from "@/components/OpenReplayTracker";
 import TrackingParams from "@/components/TrackingParams";
 import "./globals.css";
@@ -14,6 +14,11 @@ const inter = Inter({
   subsets: ["latin", "latin-ext"],
 });
 
+const atkinson = Atkinson_Hyperlegible_Next({
+  variable: "--font-atkinson",
+  subsets: ["latin", "latin-ext"],
+});
+
 export const metadata: Metadata = {
   title: "Doktor Teraz — Lekarz online bez wychodzenia z domu",
   description: "Konsultacje medyczne online. Internista, pediatra, psychiatra, konsultacja w sprawie zwolnienia L4. Szybko, wygodnie, bez kolejek.",
@@ -21,7 +26,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pl" className={`${spaceGrotesk.variable} ${inter.variable}`}>
+    <html lang="pl" className={`${spaceGrotesk.variable} ${inter.variable} ${atkinson.variable}`}>
       <head>
         <link
           rel="stylesheet"
