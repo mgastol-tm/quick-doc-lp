@@ -13,8 +13,8 @@ import EmbedCheckoutStandalone from "@/components/EmbedCheckoutStandalone";
 import { faqItems } from "@/data/faq-l4";
 
 export const metadata = {
-  title: "Zwolnienie lekarskie online (L4) — lekarz w 1 godzinę | Doktor Teraz",
-  description: "Zwolnienie lekarskie online (e-ZLA) od 79 zł. Lekarz w ciągu godziny — legalnie, 24/7. Ponad 500 specjalistów, 4.9/5 ocena. Doktor Teraz.",
+  title: "E-zwolnienie lekarskie online (L4) bez wizyty w przychodni — 79 zł | Doktor Teraz",
+  description: "E-zwolnienie lekarskie online bez wychodzenia z domu. Konsultacja z lekarzem za 79 zł — nawet w 2 godziny. Dostępne 24/7, legalnie. Doktor Teraz.",
   alternates: {
     canonical: "https://doktorteraz.pl/zwolnienia-lekarskie-online-l4",
   },
@@ -38,7 +38,7 @@ const medicalBusinessSchema = {
   "@type": "MedicalBusiness",
   name: "Doktor Teraz",
   url: "https://doktorteraz.pl",
-  description: "Konsultacje lekarskie online ze zwolnieniem lekarskim (e-ZLA)",
+  description: "E-zwolnienie lekarskie online bez wizyty w przychodni. Konsultacja z lekarzem za 79 zł.",
   medicalSpecialty: "General Practice",
   availableService: {
     "@type": "MedicalTherapy",
@@ -89,16 +89,16 @@ function Hero() {
               <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md border border-white/25 rounded-full px-4 py-1.5 w-fit">
                 <span className="w-2 h-2 rounded-full bg-[#95f6c5] animate-pulse" />
                 <span className="font-body text-xs font-bold text-white/90 tracking-wider uppercase">
-                  Dostępni lekarze online
+                  Lekarze dostępni teraz
                 </span>
               </div>
 
               <h1 className="font-heading text-[36px] md:text-[52px] lg:text-[64px] font-bold text-white tracking-tight leading-[1.08] drop-shadow-sm">
-                Konsultacja ze <span className="text-[#95f6c5] italic">zwolnieniem</span> lekarskim L4 online
+                E-zwolnienie lekarskie <span className="text-[#95f6c5] italic">bez wizyty</span> w przychodni
               </h1>
 
               <p className="font-body text-base md:text-lg text-white/80 leading-relaxed max-w-xl">
-                Szybki dostęp do opieki medycznej bez wychodzenia z domu. Otrzymaj e-ZLA nawet <strong className="font-semibold text-white">15 minut</strong> od lekarza pierwszego kontaktu.
+                Konsultacja lekarska ze zwolnieniem za <strong className="font-semibold text-white">79 zł</strong> — nawet w <strong className="font-semibold text-white">2 godziny</strong>. Wygodnie, bezpiecznie, bez kolejek.
               </p>
 
               <div className="w-16 h-[1px] bg-white/30" />
@@ -106,7 +106,7 @@ function Hero() {
               {/* Stats ribbon */}
               <div className="grid grid-cols-3 gap-4 md:flex md:flex-wrap md:gap-12 pt-2">
                 {[
-                  { value: "15min", label: "Śr. czas konsultacji" },
+                  { value: "~2h", label: "Nawet w 2 godziny" },
                   { value: "24/7", label: "Dostępność" },
                   { value: "4.9/5", label: "Ocena pacjentów" },
                 ].map(({ value, label }) => (
@@ -145,9 +145,9 @@ function Hero() {
 
 /* ───────── How It Works (from L4 page) ───────── */
 const steps = [
-  { num: "1", icon: Video, title: "Telekonsultacja", desc: "Umów się na wizytę online. Lekarz skontaktuje się z Tobą telefonicznie, przez wideo lub czat — wygodnie, z domu." },
-  { num: "2", icon: ClipboardList, title: "Opisz objawy", desc: "Opowiedz lekarzowi o swoich dolegliwościach. Lekarz przeprowadzi wywiad i postawi diagnozę." },
-  { num: "3", icon: FileText, title: "Otrzymaj zalecenia i e-ZLA", desc: "Lekarz przekaże zalecenia medyczne. Jeśli zachodzi potrzeba — wystawi e-zwolnienie (e-ZLA), widoczne od razu na koncie IKP." },
+  { num: "1", icon: ClipboardList, title: "Wypełnij ankietę", desc: "Opisz swoje objawy w krótkim formularzu online. Zajmie Ci to nie więcej niż 2 minuty." },
+  { num: "2", icon: FileCheck, title: "Opłać konsultację", desc: "Jednorazowa opłata 79 zł. Bez ukrytych kosztów, bez subskrypcji. Bezpieczna płatność online." },
+  { num: "3", icon: FileText, title: "Lekarz wystawia e-zwolnienie", desc: "Lekarz odbywa konsultację i decyduje o wystawieniu zwolnienia. E-ZLA trafia automatycznie do ZUS i pracodawcy." },
 ];
 
 function HowItWorks() {
@@ -162,7 +162,7 @@ function HowItWorks() {
             Jak uzyskać zwolnienie lekarskie online?
           </h2>
           <p className="font-body text-sm md:text-base text-[#555555] text-center">
-            Bez umawiania wizyt. Cały proces zrealizujesz z telefonu lub laptopa.
+            Cały proces bez wychodzenia z domu — z telefonu lub laptopa.
           </p>
         </div>
 
@@ -224,10 +224,10 @@ function PlatformStats() {
 
 /* ───────── Benefits ───────── */
 const benefits = [
-  { icon: Zap, title: "Dostępne 24/7", desc: "Źle się czujesz o 2 w nocy? Nasi lekarze są dostępni przez całą dobę, również w weekendy i święta." },
-  { icon: Laptop, title: "Bez wychodzenia z domu", desc: "Rejestracja online, konsultacja przez telefon, wideo lub czat, dokumenty elektronicznie. Bez dojazdów, bez kolejek." },
-  { icon: Shield, title: "Lekarze specjaliści", desc: "Wszyscy nasi lekarze posiadają pełne uprawnienia. E-ZLA wystawione po konsultacji jest prawnie wiążące i akceptowane przez każdego pracodawcę." },
-  { icon: Lock, title: "Pełna poufność", desc: "Twoje dane medyczne są szyfrowane i chronione. Działamy zgodnie z przepisami o ochronie danych osobowych." },
+  { icon: Zap, title: "Szybkość i wygoda — bez kolejek", desc: "Nie musisz jechać do przychodni ani czekać w kolejce. Konsultacja lekarska nawet w 2 godziny, z dowolnego miejsca." },
+  { icon: Laptop, title: "Bez wychodzenia z domu", desc: "Wypełnij ankietę, opłać wizytę, porozmawiaj z lekarzem — wszystko online. Bez dojazdów, bez papierów." },
+  { icon: Shield, title: "Wykwalifikowany personel medyczny", desc: "Wszyscy lekarze posiadają pełne uprawnienia. E-ZLA wystawione po konsultacji jest prawnie wiążące i akceptowane przez każdego pracodawcę." },
+  { icon: Lock, title: "Dostępność 24/7", desc: "Źle się czujesz w niedzielę wieczorem? Nasi lekarze są dostępni przez całą dobę — również w weekendy i święta." },
 ];
 
 function Benefits() {
@@ -242,7 +242,7 @@ function Benefits() {
             Dlaczego warto wybrać e-zwolnienie online?
           </h2>
           <p className="font-body text-sm md:text-base text-[#B0B0B0] text-center">
-            Kiedy jesteś chory, ostatnie czego chcesz to skomplikowany proces.
+            Wygodnie, bezpiecznie, szybko — pod kontrolą wykwalifikowanych lekarzy.
           </p>
         </div>
 
@@ -318,10 +318,10 @@ function EZLAExplainer() {
 
 /* ───────── Pricing ───────── */
 const features = [
-  "Wideokonsultacja z lekarzem specjalistą",
-  "Oficjalne elektroniczne zwolnienie lekarskie",
-  "Wysyłka do ZUS i pracodawcy automatycznie",
-  "Dostępne 24/7, 365 dni w roku",
+  "Konsultacja z wykwalifikowanym lekarzem",
+  "E-zwolnienie (e-ZLA) przy wskazaniach medycznych",
+  "Automatyczna wysyłka do ZUS i pracodawcy",
+  "Bez kolejek — dostępne 24/7, 365 dni w roku",
 ];
 
 function Pricing() {
@@ -342,7 +342,7 @@ function Pricing() {
           <div className="p-6 md:p-8 pb-5 md:pb-6 border-b border-qd-border flex flex-col gap-2">
             <h3 className="font-heading text-base md:text-lg font-semibold text-qd-text">Konsultacja online</h3>
             <p className="font-body text-[13px] md:text-sm text-[#555555] leading-[1.5]">
-              Konsultacja lekarska z fokusem na zwolnienie lekarskie (e-ZLA).
+              Zwolnienie i konsultacja lekarska — nawet w 2 godziny.
             </p>
             <div className="flex items-end gap-1 mt-1">
               <span className="font-heading text-[32px] md:text-[40px] font-semibold text-qd-text tracking-[-1px]">79 zł</span>
@@ -361,7 +361,7 @@ function Pricing() {
 
           <div className="px-6 pb-6 md:px-8 md:pb-8">
             <a href="/zwolnienia-lekarskie-online-l4#top" className="block w-full bg-[#0A7D55] text-white font-heading text-[15px] md:text-base font-semibold py-3.5 md:py-4 rounded-full text-center hover:opacity-90 transition-opacity">
-              Rozpocznij wizytę <span className="text-white">79 zł</span>
+              Zamów konsultację z e-zwolnieniem
             </a>
           </div>
         </div>
@@ -439,16 +439,16 @@ function FinalCTA() {
     <section className="bg-[#0A7D55]">
       <div className={`${container} flex flex-col items-center gap-6 md:gap-8 py-12 md:py-20`}>
         <h2 className="font-heading text-[26px] md:text-[44px] font-semibold text-white tracking-[-1px] text-center">
-          Źle się czujesz? Nie czekaj.
+          Zamów konsultację z e-zwolnieniem
         </h2>
         <p className="font-body text-[15px] md:text-lg text-white text-center">
-          Uzyskaj zwolnienie lekarskie online — wygodnie, szybko i bez kolejek.
+          Bez wizyty w przychodni. Bez kolejek. Nawet w 2 godziny.
         </p>
         <a href="/zwolnienia-lekarskie-online-l4#top" className="bg-white font-heading text-[15px] md:text-base font-semibold text-[#0A7D55] px-7 md:px-8 py-3.5 md:py-4 rounded-full flex items-center gap-2 hover:opacity-90 transition-opacity">
-          Rozpocznij wizytę <span className="text-[#0A7D55]">79 zł</span> <ArrowRight className="w-4 h-4 md:w-[18px] md:h-[18px] text-[#0A7D55]" />
+          Zamów konsultację za <span className="text-[#0A7D55]">79 zł</span> <ArrowRight className="w-4 h-4 md:w-[18px] md:h-[18px] text-[#0A7D55]" />
         </a>
         <p className="font-body text-xs md:text-[13px] text-white text-center">
-          Bez subskrypcji — płacisz tylko wtedy, gdy potrzebujesz
+          Jedna opłata — bez subskrypcji, bez ukrytych kosztów
         </p>
       </div>
     </section>

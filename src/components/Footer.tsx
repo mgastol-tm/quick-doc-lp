@@ -19,8 +19,7 @@ const linkHrefs: Record<string, string> = {
 
 const footerLinks = [
   { title: "Produkt", links: ["Jak to działa", "Cennik", "FAQ"] },
-  { title: "Firma", links: ["O nas", "Kontakt", "Kariera"] },
-  { title: "Prawo", links: ["Polityka prywatności", "Regulamin", "Regulamin organizacyjny"] },
+{ title: "Prawo", links: ["Polityka prywatności", "Regulamin"] },
 ];
 
 export default function Footer() {
